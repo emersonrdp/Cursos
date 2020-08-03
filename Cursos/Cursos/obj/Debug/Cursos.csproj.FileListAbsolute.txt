@@ -1,0 +1,12 @@
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\bin\Debug\Cursos.exe.config
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\bin\Debug\Cursos.exe
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\bin\Debug\Cursos.pdb
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.csprojAssemblyReference.cache
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.Form1.resources
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.Properties.Resources.resources
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.csproj.GenerateResource.cache
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.csproj.CoreCompileInputs.cache
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.exe
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.pdb
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.login.resources
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.Principal.resources
