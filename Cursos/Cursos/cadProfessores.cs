@@ -16,5 +16,10 @@ namespace Cursos
         {
             InitializeComponent();
         }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();   /// fechar a janela de cadastro de professores
+        }
     }
 }
