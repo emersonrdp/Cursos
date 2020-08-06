@@ -35,7 +35,41 @@ namespace Cursos
 
         private void wordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("winword");   // abre o MS Word
+            System.Diagnostics.Process.Start("winword");   // abre o MS Word -- depois implmentar para s não achar o winword abrir o wordpad
+        }
+
+        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadCurso frmCurso = new cadCurso();
+            frmCurso.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadCliente frmCliente = new cadCliente();
+            frmCliente.Show();
+        }
+
+        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadFuncionario frmFuncionario = new cadFuncionario();
+            frmFuncionario.Show();
+        }
+
+        private void professoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadProfessores frmProfessores = new cadProfessores();
+            frmProfessores.Show();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

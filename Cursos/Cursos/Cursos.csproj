@@ -46,6 +46,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cadCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadCliente.Designer.cs">
+      <DependentUpon>cadCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadCurso.Designer.cs">
+      <DependentUpon>cadCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadFuncionario.Designer.cs">
+      <DependentUpon>cadFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadProfessores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadProfessores.Designer.cs">
+      <DependentUpon>cadProfessores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +90,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="cadCliente.resx">
+      <DependentUpon>cadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadCurso.resx">
+      <DependentUpon>cadCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadFuncionario.resx">
+      <DependentUpon>cadFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadProfessores.resx">
+      <DependentUpon>cadProfessores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,3 +10,7 @@ E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.exe
 E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.pdb
 E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.login.resources
 E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.Principal.resources
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadCurso.resources
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadCliente.resources
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadFuncionario.resources
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadProfessores.resources
