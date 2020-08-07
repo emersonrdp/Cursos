@@ -16,5 +16,57 @@ namespace Cursos
         {
             InitializeComponent();
         }
+
+        private void clienteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.clienteBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+
+        }
+
+        private void cadCliente_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'bDECursosDataSet.Cliente'. Você pode movê-la ou removê-la conforme necessário.
+            this.clienteTableAdapter.Fill(this.bDECursosDataSet.Cliente);
+
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();   /// fechar a janela de cadastro de clientes
+        }
+
+        private void clienteBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.clienteBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+            MessageBox.Show("Registro Salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btCadastrar_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.clienteBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+            MessageBox.Show("Registro Salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            // implementação de pergunta para confirmação de exclusão de registro
+            if (MessageBox.Show("Deseja excluir o registro?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // confirmando exclusão ele salva o registro pois o botão exclusão precisa que salve o registro para concluir a exclusão, desta forma já fica automatizado.
+                this.Validate();
+                this.clienteBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+            }
+            else
+            {
+                this.clienteTableAdapter.Fill(this.bDECursosDataSet.Cliente);   // exibe novamente o formulario
+            }
+        }
     }
 }

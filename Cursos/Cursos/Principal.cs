@@ -56,18 +56,24 @@ namespace Cursos
             frmFuncionario.Show();
         }
 
+        private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadPerfil frmPerfil = new cadPerfil();
+            frmPerfil.Show();
+        }
+
         private void professoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cadProfessores frmProfessores = new cadProfessores();
             frmProfessores.Show();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)   // menu sair
         {
             Application.Exit();
         }
 
-        private void toolStripButton5_Click(object sender, EventArgs e)
+        private void toolStripButton5_Click(object sender, EventArgs e)   // botão sair
         {
             Application.Exit();
         }

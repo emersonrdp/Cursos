@@ -14,3 +14,5 @@ E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadCurso.resour
 E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadCliente.resources
 E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadFuncionario.resources
 E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadProfessores.resources
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\bin\Debug\BD-ECursos.accdb
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadPerfil.resources

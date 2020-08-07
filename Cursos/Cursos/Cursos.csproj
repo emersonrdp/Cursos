@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDECursosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDECursosDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="cadCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +68,12 @@
     </Compile>
     <Compile Include="cadFuncionario.Designer.cs">
       <DependentUpon>cadFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cadPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadPerfil.Designer.cs">
+      <DependentUpon>cadPerfil.cs</DependentUpon>
     </Compile>
     <Compile Include="cadProfessores.cs">
       <SubType>Form</SubType>
@@ -99,6 +110,9 @@
     <EmbeddedResource Include="cadFuncionario.resx">
       <DependentUpon>cadFuncionario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cadPerfil.resx">
+      <DependentUpon>cadPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadProfessores.resx">
       <DependentUpon>cadProfessores.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +134,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BDECursosDataSet.xsc">
+      <DependentUpon>BDECursosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDECursosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDECursosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDECursosDataSet.xss">
+      <DependentUpon>BDECursosDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -132,6 +157,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BD-ECursos.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

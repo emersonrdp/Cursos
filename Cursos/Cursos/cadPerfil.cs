@@ -10,37 +10,37 @@ using System.Windows.Forms;
 
 namespace Cursos
 {
-    public partial class cadFuncionario : Form
+    public partial class cadPerfil : Form
     {
-        public cadFuncionario()
+        public cadPerfil()
         {
             InitializeComponent();
         }
 
-        private void funcionarioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void perfilBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.funcionarioBindingSource.EndEdit();
+            this.perfilBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
 
         }
 
-        private void cadFuncionario_Load(object sender, EventArgs e)
+        private void cadPerfil_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'bDECursosDataSet.Funcionario'. Você pode movê-la ou removê-la conforme necessário.
-            this.funcionarioTableAdapter.Fill(this.bDECursosDataSet.Funcionario);
+            // TODO: esta linha de código carrega dados na tabela 'bDECursosDataSet.Perfil'. Você pode movê-la ou removê-la conforme necessário.
+            this.perfilTableAdapter.Fill(this.bDECursosDataSet.Perfil);
 
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
         {
-            this.Dispose();   /// fechar a janela de cadastro de funcionarios
+            this.Dispose();   /// fechar a janela de cadastro de perfil
         }
 
-        private void funcionarioBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        private void perfilBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
-            this.funcionarioBindingSource.EndEdit();
+            this.perfilBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
             MessageBox.Show("Registro Salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -48,7 +48,7 @@ namespace Cursos
         private void btCadastrar_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.funcionarioBindingSource.EndEdit();
+            this.perfilBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
             MessageBox.Show("Registro Salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -60,12 +60,12 @@ namespace Cursos
             {
                 // confirmando exclusão ele salva o registro pois o botão exclusão precisa que salve o registro para concluir a exclusão, desta forma já fica automatizado.
                 this.Validate();
-                this.funcionarioBindingSource.EndEdit();
+                this.perfilBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
             }
             else
             {
-                this.funcionarioTableAdapter.Fill(this.bDECursosDataSet.Funcionario);   // exibe novamente o formulario
+                this.perfilTableAdapter.Fill(this.bDECursosDataSet.Perfil);   // exibe novamente o formulario
             }
         }
     }
