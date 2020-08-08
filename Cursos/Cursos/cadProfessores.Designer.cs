@@ -40,23 +40,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadProfessores));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btCadastrar = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
-            this.bDECursosDataSet = new Cursos.BDECursosDataSet();
-            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.professorTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ProfessorTableAdapter();
-            this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
-            this.idProfessorTextBox = new System.Windows.Forms.TextBox();
-            this.nomeTextBox = new System.Windows.Forms.TextBox();
-            this.endereçoTextBox = new System.Windows.Forms.TextBox();
-            this.bairroTextBox = new System.Windows.Forms.TextBox();
-            this.cidadeTextBox = new System.Windows.Forms.TextBox();
-            this.uFTextBox = new System.Windows.Forms.TextBox();
-            this.telefoneTextBox = new System.Windows.Forms.TextBox();
-            this.cEPTextBox = new System.Windows.Forms.TextBox();
             this.professorBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bDECursosDataSet = new Cursos.BDECursosDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -68,6 +55,19 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.professorBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.idProfessorTextBox = new System.Windows.Forms.TextBox();
+            this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.endereçoTextBox = new System.Windows.Forms.TextBox();
+            this.bairroTextBox = new System.Windows.Forms.TextBox();
+            this.cidadeTextBox = new System.Windows.Forms.TextBox();
+            this.uFTextBox = new System.Windows.Forms.TextBox();
+            this.telefoneTextBox = new System.Windows.Forms.TextBox();
+            this.cEPTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btCadastrar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.professorTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ProfessorTableAdapter();
+            this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
             idProfessorLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             endereçoLabel = new System.Windows.Forms.Label();
@@ -78,11 +78,83 @@
             cEPLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.professorBindingNavigator)).BeginInit();
             this.professorBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // idProfessorLabel
+            // 
+            idProfessorLabel.AutoSize = true;
+            idProfessorLabel.Location = new System.Drawing.Point(44, 59);
+            idProfessorLabel.Name = "idProfessorLabel";
+            idProfessorLabel.Size = new System.Drawing.Size(43, 13);
+            idProfessorLabel.TabIndex = 0;
+            idProfessorLabel.Text = "Código:";
+            // 
+            // nomeLabel
+            // 
+            nomeLabel.AutoSize = true;
+            nomeLabel.Location = new System.Drawing.Point(44, 85);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(38, 13);
+            nomeLabel.TabIndex = 2;
+            nomeLabel.Text = "Nome:";
+            // 
+            // endereçoLabel
+            // 
+            endereçoLabel.AutoSize = true;
+            endereçoLabel.Location = new System.Drawing.Point(44, 111);
+            endereçoLabel.Name = "endereçoLabel";
+            endereçoLabel.Size = new System.Drawing.Size(56, 13);
+            endereçoLabel.TabIndex = 4;
+            endereçoLabel.Text = "Endereço:";
+            // 
+            // bairroLabel
+            // 
+            bairroLabel.AutoSize = true;
+            bairroLabel.Location = new System.Drawing.Point(44, 137);
+            bairroLabel.Name = "bairroLabel";
+            bairroLabel.Size = new System.Drawing.Size(37, 13);
+            bairroLabel.TabIndex = 6;
+            bairroLabel.Text = "Bairro:";
+            // 
+            // cidadeLabel
+            // 
+            cidadeLabel.AutoSize = true;
+            cidadeLabel.Location = new System.Drawing.Point(44, 163);
+            cidadeLabel.Name = "cidadeLabel";
+            cidadeLabel.Size = new System.Drawing.Size(43, 13);
+            cidadeLabel.TabIndex = 8;
+            cidadeLabel.Text = "Cidade:";
+            // 
+            // uFLabel
+            // 
+            uFLabel.AutoSize = true;
+            uFLabel.Location = new System.Drawing.Point(44, 189);
+            uFLabel.Name = "uFLabel";
+            uFLabel.Size = new System.Drawing.Size(24, 13);
+            uFLabel.TabIndex = 10;
+            uFLabel.Text = "UF:";
+            // 
+            // telefoneLabel
+            // 
+            telefoneLabel.AutoSize = true;
+            telefoneLabel.Location = new System.Drawing.Point(44, 215);
+            telefoneLabel.Name = "telefoneLabel";
+            telefoneLabel.Size = new System.Drawing.Size(52, 13);
+            telefoneLabel.TabIndex = 12;
+            telefoneLabel.Text = "Telefone:";
+            // 
+            // cEPLabel
+            // 
+            cEPLabel.AutoSize = true;
+            cEPLabel.Location = new System.Drawing.Point(44, 241);
+            cEPLabel.Name = "cEPLabel";
+            cEPLabel.Size = new System.Drawing.Size(31, 13);
+            cEPLabel.TabIndex = 14;
+            cEPLabel.Text = "CEP:";
             // 
             // tabControl1
             // 
@@ -120,198 +192,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(738, 317);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Consulta";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btCadastrar
-            // 
-            this.btCadastrar.Location = new System.Drawing.Point(638, 392);
-            this.btCadastrar.Name = "btCadastrar";
-            this.btCadastrar.Size = new System.Drawing.Size(106, 35);
-            this.btCadastrar.TabIndex = 4;
-            this.btCadastrar.Text = "Cadastrar";
-            this.btCadastrar.UseVisualStyleBackColor = true;
-            this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.Location = new System.Drawing.Point(513, 392);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(106, 35);
-            this.btCancelar.TabIndex = 3;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // bDECursosDataSet
-            // 
-            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
-            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // professorBindingSource
-            // 
-            this.professorBindingSource.DataMember = "Professor";
-            this.professorBindingSource.DataSource = this.bDECursosDataSet;
-            // 
-            // professorTableAdapter
-            // 
-            this.professorTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ClienteTableAdapter = null;
-            this.tableAdapterManager.CursoTableAdapter = null;
-            this.tableAdapterManager.FuncionarioTableAdapter = null;
-            this.tableAdapterManager.ItemLocacaoTableAdapter = null;
-            this.tableAdapterManager.LocacaoTableAdapter = null;
-            this.tableAdapterManager.PerfilTableAdapter = null;
-            this.tableAdapterManager.ProfessorTableAdapter = this.professorTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // idProfessorLabel
-            // 
-            idProfessorLabel.AutoSize = true;
-            idProfessorLabel.Location = new System.Drawing.Point(44, 59);
-            idProfessorLabel.Name = "idProfessorLabel";
-            idProfessorLabel.Size = new System.Drawing.Size(43, 13);
-            idProfessorLabel.TabIndex = 0;
-            idProfessorLabel.Text = "Código:";
-            // 
-            // idProfessorTextBox
-            // 
-            this.idProfessorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "idProfessor", true));
-            this.idProfessorTextBox.Location = new System.Drawing.Point(102, 56);
-            this.idProfessorTextBox.Name = "idProfessorTextBox";
-            this.idProfessorTextBox.Size = new System.Drawing.Size(572, 20);
-            this.idProfessorTextBox.TabIndex = 1;
-            // 
-            // nomeLabel
-            // 
-            nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(44, 85);
-            nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(38, 13);
-            nomeLabel.TabIndex = 2;
-            nomeLabel.Text = "Nome:";
-            // 
-            // nomeTextBox
-            // 
-            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(102, 82);
-            this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(572, 20);
-            this.nomeTextBox.TabIndex = 3;
-            // 
-            // endereçoLabel
-            // 
-            endereçoLabel.AutoSize = true;
-            endereçoLabel.Location = new System.Drawing.Point(44, 111);
-            endereçoLabel.Name = "endereçoLabel";
-            endereçoLabel.Size = new System.Drawing.Size(56, 13);
-            endereçoLabel.TabIndex = 4;
-            endereçoLabel.Text = "Endereço:";
-            // 
-            // endereçoTextBox
-            // 
-            this.endereçoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "Endereço", true));
-            this.endereçoTextBox.Location = new System.Drawing.Point(102, 108);
-            this.endereçoTextBox.Name = "endereçoTextBox";
-            this.endereçoTextBox.Size = new System.Drawing.Size(572, 20);
-            this.endereçoTextBox.TabIndex = 5;
-            // 
-            // bairroLabel
-            // 
-            bairroLabel.AutoSize = true;
-            bairroLabel.Location = new System.Drawing.Point(44, 137);
-            bairroLabel.Name = "bairroLabel";
-            bairroLabel.Size = new System.Drawing.Size(37, 13);
-            bairroLabel.TabIndex = 6;
-            bairroLabel.Text = "Bairro:";
-            // 
-            // bairroTextBox
-            // 
-            this.bairroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "Bairro", true));
-            this.bairroTextBox.Location = new System.Drawing.Point(102, 134);
-            this.bairroTextBox.Name = "bairroTextBox";
-            this.bairroTextBox.Size = new System.Drawing.Size(572, 20);
-            this.bairroTextBox.TabIndex = 7;
-            // 
-            // cidadeLabel
-            // 
-            cidadeLabel.AutoSize = true;
-            cidadeLabel.Location = new System.Drawing.Point(44, 163);
-            cidadeLabel.Name = "cidadeLabel";
-            cidadeLabel.Size = new System.Drawing.Size(43, 13);
-            cidadeLabel.TabIndex = 8;
-            cidadeLabel.Text = "Cidade:";
-            // 
-            // cidadeTextBox
-            // 
-            this.cidadeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "Cidade", true));
-            this.cidadeTextBox.Location = new System.Drawing.Point(102, 160);
-            this.cidadeTextBox.Name = "cidadeTextBox";
-            this.cidadeTextBox.Size = new System.Drawing.Size(572, 20);
-            this.cidadeTextBox.TabIndex = 9;
-            // 
-            // uFLabel
-            // 
-            uFLabel.AutoSize = true;
-            uFLabel.Location = new System.Drawing.Point(44, 189);
-            uFLabel.Name = "uFLabel";
-            uFLabel.Size = new System.Drawing.Size(24, 13);
-            uFLabel.TabIndex = 10;
-            uFLabel.Text = "UF:";
-            // 
-            // uFTextBox
-            // 
-            this.uFTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "UF", true));
-            this.uFTextBox.Location = new System.Drawing.Point(102, 186);
-            this.uFTextBox.Name = "uFTextBox";
-            this.uFTextBox.Size = new System.Drawing.Size(572, 20);
-            this.uFTextBox.TabIndex = 11;
-            // 
-            // telefoneLabel
-            // 
-            telefoneLabel.AutoSize = true;
-            telefoneLabel.Location = new System.Drawing.Point(44, 215);
-            telefoneLabel.Name = "telefoneLabel";
-            telefoneLabel.Size = new System.Drawing.Size(52, 13);
-            telefoneLabel.TabIndex = 12;
-            telefoneLabel.Text = "Telefone:";
-            // 
-            // telefoneTextBox
-            // 
-            this.telefoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "Telefone", true));
-            this.telefoneTextBox.Location = new System.Drawing.Point(102, 212);
-            this.telefoneTextBox.Name = "telefoneTextBox";
-            this.telefoneTextBox.Size = new System.Drawing.Size(572, 20);
-            this.telefoneTextBox.TabIndex = 13;
-            // 
-            // cEPLabel
-            // 
-            cEPLabel.AutoSize = true;
-            cEPLabel.Location = new System.Drawing.Point(44, 241);
-            cEPLabel.Name = "cEPLabel";
-            cEPLabel.Size = new System.Drawing.Size(31, 13);
-            cEPLabel.TabIndex = 14;
-            cEPLabel.Text = "CEP:";
-            // 
-            // cEPTextBox
-            // 
-            this.cEPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "CEP", true));
-            this.cEPTextBox.Location = new System.Drawing.Point(102, 238);
-            this.cEPTextBox.Name = "cEPTextBox";
-            this.cEPTextBox.Size = new System.Drawing.Size(572, 20);
-            this.cEPTextBox.TabIndex = 15;
             // 
             // professorBindingNavigator
             // 
@@ -351,6 +231,16 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
+            // 
+            // professorBindingSource
+            // 
+            this.professorBindingSource.DataMember = "Professor";
+            this.professorBindingSource.DataSource = this.bDECursosDataSet;
+            // 
+            // bDECursosDataSet
+            // 
+            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
+            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -439,6 +329,116 @@
             this.professorBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.professorBindingNavigatorSaveItem.Click += new System.EventHandler(this.professorBindingNavigatorSaveItem_Click_1);
             // 
+            // idProfessorTextBox
+            // 
+            this.idProfessorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "idProfessor", true));
+            this.idProfessorTextBox.Location = new System.Drawing.Point(102, 56);
+            this.idProfessorTextBox.Name = "idProfessorTextBox";
+            this.idProfessorTextBox.Size = new System.Drawing.Size(572, 20);
+            this.idProfessorTextBox.TabIndex = 1;
+            // 
+            // nomeTextBox
+            // 
+            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "Nome", true));
+            this.nomeTextBox.Location = new System.Drawing.Point(102, 82);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(572, 20);
+            this.nomeTextBox.TabIndex = 3;
+            // 
+            // endereçoTextBox
+            // 
+            this.endereçoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "Endereço", true));
+            this.endereçoTextBox.Location = new System.Drawing.Point(102, 108);
+            this.endereçoTextBox.Name = "endereçoTextBox";
+            this.endereçoTextBox.Size = new System.Drawing.Size(572, 20);
+            this.endereçoTextBox.TabIndex = 5;
+            // 
+            // bairroTextBox
+            // 
+            this.bairroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "Bairro", true));
+            this.bairroTextBox.Location = new System.Drawing.Point(102, 134);
+            this.bairroTextBox.Name = "bairroTextBox";
+            this.bairroTextBox.Size = new System.Drawing.Size(572, 20);
+            this.bairroTextBox.TabIndex = 7;
+            // 
+            // cidadeTextBox
+            // 
+            this.cidadeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "Cidade", true));
+            this.cidadeTextBox.Location = new System.Drawing.Point(102, 160);
+            this.cidadeTextBox.Name = "cidadeTextBox";
+            this.cidadeTextBox.Size = new System.Drawing.Size(572, 20);
+            this.cidadeTextBox.TabIndex = 9;
+            // 
+            // uFTextBox
+            // 
+            this.uFTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "UF", true));
+            this.uFTextBox.Location = new System.Drawing.Point(102, 186);
+            this.uFTextBox.Name = "uFTextBox";
+            this.uFTextBox.Size = new System.Drawing.Size(572, 20);
+            this.uFTextBox.TabIndex = 11;
+            // 
+            // telefoneTextBox
+            // 
+            this.telefoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "Telefone", true));
+            this.telefoneTextBox.Location = new System.Drawing.Point(102, 212);
+            this.telefoneTextBox.Name = "telefoneTextBox";
+            this.telefoneTextBox.Size = new System.Drawing.Size(572, 20);
+            this.telefoneTextBox.TabIndex = 13;
+            // 
+            // cEPTextBox
+            // 
+            this.cEPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.professorBindingSource, "CEP", true));
+            this.cEPTextBox.Location = new System.Drawing.Point(102, 238);
+            this.cEPTextBox.Name = "cEPTextBox";
+            this.cEPTextBox.Size = new System.Drawing.Size(572, 20);
+            this.cEPTextBox.TabIndex = 15;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(738, 317);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Consulta";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btCadastrar
+            // 
+            this.btCadastrar.Location = new System.Drawing.Point(638, 392);
+            this.btCadastrar.Name = "btCadastrar";
+            this.btCadastrar.Size = new System.Drawing.Size(106, 35);
+            this.btCadastrar.TabIndex = 4;
+            this.btCadastrar.Text = "Cadastrar";
+            this.btCadastrar.UseVisualStyleBackColor = true;
+            this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.Location = new System.Drawing.Point(513, 392);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(106, 35);
+            this.btCancelar.TabIndex = 3;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // professorTableAdapter
+            // 
+            this.professorTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClienteTableAdapter = null;
+            this.tableAdapterManager.CursoTableAdapter = null;
+            this.tableAdapterManager.FuncionarioTableAdapter = null;
+            this.tableAdapterManager.ItemLocacaoTableAdapter = null;
+            this.tableAdapterManager.LocacaoTableAdapter = null;
+            this.tableAdapterManager.PerfilTableAdapter = null;
+            this.tableAdapterManager.ProfessorTableAdapter = this.professorTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // cadProfessores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,6 +448,7 @@
             this.Controls.Add(this.btCadastrar);
             this.Controls.Add(this.btCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "cadProfessores";
@@ -457,11 +458,11 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.professorBindingNavigator)).EndInit();
             this.professorBindingNavigator.ResumeLayout(false);
             this.professorBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

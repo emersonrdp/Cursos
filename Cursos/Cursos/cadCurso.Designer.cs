@@ -34,25 +34,16 @@
             System.Windows.Forms.Label tituloLabel;
             System.Windows.Forms.Label idProfessorLabel;
             System.Windows.Forms.Label idCursoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadCurso));
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadCurso));
             this.btCancelar = new System.Windows.Forms.Button();
             this.btCadastrar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.bDECursosDataSet = new Cursos.BDECursosDataSet();
-            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
-            this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
-            this.comentarioTextBox = new System.Windows.Forms.TextBox();
-            this.descCursoTextBox = new System.Windows.Forms.TextBox();
-            this.tituloTextBox = new System.Windows.Forms.TextBox();
-            this.idProfessorTextBox = new System.Windows.Forms.TextBox();
-            this.idCursoTextBox = new System.Windows.Forms.TextBox();
             this.cursoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bDECursosDataSet = new Cursos.BDECursosDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -64,7 +55,16 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cursoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.idCursoTextBox = new System.Windows.Forms.TextBox();
+            this.idProfessorTextBox = new System.Windows.Forms.TextBox();
+            this.tituloTextBox = new System.Windows.Forms.TextBox();
+            this.descCursoTextBox = new System.Windows.Forms.TextBox();
+            this.comentarioTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
+            this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
             comentarioLabel = new System.Windows.Forms.Label();
             descCursoLabel = new System.Windows.Forms.Label();
             tituloLabel = new System.Windows.Forms.Label();
@@ -73,12 +73,66 @@
             label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingNavigator)).BeginInit();
             this.cursoBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // comentarioLabel
+            // 
+            comentarioLabel.AutoSize = true;
+            comentarioLabel.Location = new System.Drawing.Point(52, 175);
+            comentarioLabel.Name = "comentarioLabel";
+            comentarioLabel.Size = new System.Drawing.Size(63, 13);
+            comentarioLabel.TabIndex = 8;
+            comentarioLabel.Text = "Comentario:";
+            // 
+            // descCursoLabel
+            // 
+            descCursoLabel.AutoSize = true;
+            descCursoLabel.Location = new System.Drawing.Point(52, 149);
+            descCursoLabel.Name = "descCursoLabel";
+            descCursoLabel.Size = new System.Drawing.Size(103, 13);
+            descCursoLabel.TabIndex = 6;
+            descCursoLabel.Text = "Descrição do Curso:";
+            // 
+            // tituloLabel
+            // 
+            tituloLabel.AutoSize = true;
+            tituloLabel.Location = new System.Drawing.Point(52, 123);
+            tituloLabel.Name = "tituloLabel";
+            tituloLabel.Size = new System.Drawing.Size(36, 13);
+            tituloLabel.TabIndex = 4;
+            tituloLabel.Text = "Titulo:";
+            // 
+            // idProfessorLabel
+            // 
+            idProfessorLabel.AutoSize = true;
+            idProfessorLabel.Location = new System.Drawing.Point(52, 97);
+            idProfessorLabel.Name = "idProfessorLabel";
+            idProfessorLabel.Size = new System.Drawing.Size(105, 13);
+            idProfessorLabel.TabIndex = 2;
+            idProfessorLabel.Text = "Código do Professor:";
+            // 
+            // idCursoLabel
+            // 
+            idCursoLabel.AutoSize = true;
+            idCursoLabel.Location = new System.Drawing.Point(52, 71);
+            idCursoLabel.Name = "idCursoLabel";
+            idCursoLabel.Size = new System.Drawing.Size(94, 13);
+            idCursoLabel.TabIndex = 0;
+            idCursoLabel.Text = "Código do Código:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(36, 43);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(68, 13);
+            label1.TabIndex = 10;
+            label1.Text = "Comentarios:";
             // 
             // btCancelar
             // 
@@ -132,138 +186,6 @@
             this.tabPage1.Text = "Dados Gerais";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(label1);
-            this.tabPage2.Controls.Add(this.textBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(738, 317);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Comentários";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(738, 317);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Imagem da Capa";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // bDECursosDataSet
-            // 
-            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
-            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cursoBindingSource
-            // 
-            this.cursoBindingSource.DataMember = "Curso";
-            this.cursoBindingSource.DataSource = this.bDECursosDataSet;
-            // 
-            // cursoTableAdapter
-            // 
-            this.cursoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ClienteTableAdapter = null;
-            this.tableAdapterManager.CursoTableAdapter = this.cursoTableAdapter;
-            this.tableAdapterManager.FuncionarioTableAdapter = null;
-            this.tableAdapterManager.ItemLocacaoTableAdapter = null;
-            this.tableAdapterManager.LocacaoTableAdapter = null;
-            this.tableAdapterManager.PerfilTableAdapter = null;
-            this.tableAdapterManager.ProfessorTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // comentarioTextBox
-            // 
-            this.comentarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Comentario", true));
-            this.comentarioTextBox.Location = new System.Drawing.Point(162, 172);
-            this.comentarioTextBox.Name = "comentarioTextBox";
-            this.comentarioTextBox.Size = new System.Drawing.Size(525, 20);
-            this.comentarioTextBox.TabIndex = 9;
-            // 
-            // comentarioLabel
-            // 
-            comentarioLabel.AutoSize = true;
-            comentarioLabel.Location = new System.Drawing.Point(52, 175);
-            comentarioLabel.Name = "comentarioLabel";
-            comentarioLabel.Size = new System.Drawing.Size(63, 13);
-            comentarioLabel.TabIndex = 8;
-            comentarioLabel.Text = "Comentario:";
-            // 
-            // descCursoTextBox
-            // 
-            this.descCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "DescCurso", true));
-            this.descCursoTextBox.Location = new System.Drawing.Point(162, 146);
-            this.descCursoTextBox.Name = "descCursoTextBox";
-            this.descCursoTextBox.Size = new System.Drawing.Size(525, 20);
-            this.descCursoTextBox.TabIndex = 7;
-            // 
-            // descCursoLabel
-            // 
-            descCursoLabel.AutoSize = true;
-            descCursoLabel.Location = new System.Drawing.Point(52, 149);
-            descCursoLabel.Name = "descCursoLabel";
-            descCursoLabel.Size = new System.Drawing.Size(103, 13);
-            descCursoLabel.TabIndex = 6;
-            descCursoLabel.Text = "Descrição do Curso:";
-            // 
-            // tituloTextBox
-            // 
-            this.tituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Titulo", true));
-            this.tituloTextBox.Location = new System.Drawing.Point(162, 120);
-            this.tituloTextBox.Name = "tituloTextBox";
-            this.tituloTextBox.Size = new System.Drawing.Size(525, 20);
-            this.tituloTextBox.TabIndex = 5;
-            // 
-            // tituloLabel
-            // 
-            tituloLabel.AutoSize = true;
-            tituloLabel.Location = new System.Drawing.Point(52, 123);
-            tituloLabel.Name = "tituloLabel";
-            tituloLabel.Size = new System.Drawing.Size(36, 13);
-            tituloLabel.TabIndex = 4;
-            tituloLabel.Text = "Titulo:";
-            // 
-            // idProfessorTextBox
-            // 
-            this.idProfessorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "idProfessor", true));
-            this.idProfessorTextBox.Location = new System.Drawing.Point(162, 94);
-            this.idProfessorTextBox.Name = "idProfessorTextBox";
-            this.idProfessorTextBox.Size = new System.Drawing.Size(525, 20);
-            this.idProfessorTextBox.TabIndex = 3;
-            // 
-            // idProfessorLabel
-            // 
-            idProfessorLabel.AutoSize = true;
-            idProfessorLabel.Location = new System.Drawing.Point(52, 97);
-            idProfessorLabel.Name = "idProfessorLabel";
-            idProfessorLabel.Size = new System.Drawing.Size(105, 13);
-            idProfessorLabel.TabIndex = 2;
-            idProfessorLabel.Text = "Código do Professor:";
-            // 
-            // idCursoLabel
-            // 
-            idCursoLabel.AutoSize = true;
-            idCursoLabel.Location = new System.Drawing.Point(52, 71);
-            idCursoLabel.Name = "idCursoLabel";
-            idCursoLabel.Size = new System.Drawing.Size(94, 13);
-            idCursoLabel.TabIndex = 0;
-            idCursoLabel.Text = "Código do Código:";
-            // 
-            // idCursoTextBox
-            // 
-            this.idCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "idCurso", true));
-            this.idCursoTextBox.Location = new System.Drawing.Point(162, 68);
-            this.idCursoTextBox.Name = "idCursoTextBox";
-            this.idCursoTextBox.Size = new System.Drawing.Size(525, 20);
-            this.idCursoTextBox.TabIndex = 1;
-            // 
             // cursoBindingNavigator
             // 
             this.cursoBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -302,6 +224,16 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataMember = "Curso";
+            this.cursoBindingSource.DataSource = this.bDECursosDataSet;
+            // 
+            // bDECursosDataSet
+            // 
+            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
+            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -390,14 +322,57 @@
             this.cursoBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.cursoBindingNavigatorSaveItem.Click += new System.EventHandler(this.cursoBindingNavigatorSaveItem_Click_1);
             // 
-            // label1
+            // idCursoTextBox
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(36, 43);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(68, 13);
-            label1.TabIndex = 10;
-            label1.Text = "Comentarios:";
+            this.idCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "idCurso", true));
+            this.idCursoTextBox.Location = new System.Drawing.Point(162, 68);
+            this.idCursoTextBox.Name = "idCursoTextBox";
+            this.idCursoTextBox.Size = new System.Drawing.Size(525, 20);
+            this.idCursoTextBox.TabIndex = 1;
+            // 
+            // idProfessorTextBox
+            // 
+            this.idProfessorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "idProfessor", true));
+            this.idProfessorTextBox.Location = new System.Drawing.Point(162, 94);
+            this.idProfessorTextBox.Name = "idProfessorTextBox";
+            this.idProfessorTextBox.Size = new System.Drawing.Size(525, 20);
+            this.idProfessorTextBox.TabIndex = 3;
+            // 
+            // tituloTextBox
+            // 
+            this.tituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Titulo", true));
+            this.tituloTextBox.Location = new System.Drawing.Point(162, 120);
+            this.tituloTextBox.Name = "tituloTextBox";
+            this.tituloTextBox.Size = new System.Drawing.Size(525, 20);
+            this.tituloTextBox.TabIndex = 5;
+            // 
+            // descCursoTextBox
+            // 
+            this.descCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "DescCurso", true));
+            this.descCursoTextBox.Location = new System.Drawing.Point(162, 146);
+            this.descCursoTextBox.Name = "descCursoTextBox";
+            this.descCursoTextBox.Size = new System.Drawing.Size(525, 20);
+            this.descCursoTextBox.TabIndex = 7;
+            // 
+            // comentarioTextBox
+            // 
+            this.comentarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Comentario", true));
+            this.comentarioTextBox.Location = new System.Drawing.Point(162, 172);
+            this.comentarioTextBox.Name = "comentarioTextBox";
+            this.comentarioTextBox.Size = new System.Drawing.Size(525, 20);
+            this.comentarioTextBox.TabIndex = 9;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(label1);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(738, 317);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Comentários";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -406,6 +381,31 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(569, 20);
             this.textBox1.TabIndex = 11;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(738, 317);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Imagem da Capa";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // cursoTableAdapter
+            // 
+            this.cursoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClienteTableAdapter = null;
+            this.tableAdapterManager.CursoTableAdapter = this.cursoTableAdapter;
+            this.tableAdapterManager.FuncionarioTableAdapter = null;
+            this.tableAdapterManager.ItemLocacaoTableAdapter = null;
+            this.tableAdapterManager.LocacaoTableAdapter = null;
+            this.tableAdapterManager.PerfilTableAdapter = null;
+            this.tableAdapterManager.ProfessorTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // cadCurso
             // 
@@ -416,6 +416,7 @@
             this.Controls.Add(this.btCadastrar);
             this.Controls.Add(this.btCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "cadCurso";
@@ -425,13 +426,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingNavigator)).EndInit();
             this.cursoBindingNavigator.ResumeLayout(false);
             this.cursoBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
