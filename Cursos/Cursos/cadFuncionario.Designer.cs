@@ -306,6 +306,7 @@
             this.idFuncionarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.funcionarioBindingSource, "idFuncionario", true));
             this.idFuncionarioTextBox.Location = new System.Drawing.Point(106, 64);
             this.idFuncionarioTextBox.Name = "idFuncionarioTextBox";
+            this.idFuncionarioTextBox.ReadOnly = true;
             this.idFuncionarioTextBox.Size = new System.Drawing.Size(566, 20);
             this.idFuncionarioTextBox.TabIndex = 1;
             // 

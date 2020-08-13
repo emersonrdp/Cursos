@@ -38,17 +38,17 @@ namespace Cursos {
         
         private ProfessorDataTable tableProfessor;
         
-        private global::System.Data.DataRelation relationProfessorCurso;
-        
         private global::System.Data.DataRelation relationPerfilFuncionario;
-        
-        private global::System.Data.DataRelation relationCursoItemLocacao;
         
         private global::System.Data.DataRelation relationLocacaoItemLocacao;
         
         private global::System.Data.DataRelation relationClienteLocacao;
         
         private global::System.Data.DataRelation relationFuncionarioLocacao;
+        
+        private global::System.Data.DataRelation relationCursoItemLocacao;
+        
+        private global::System.Data.DataRelation relationProfessorCurso;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -350,12 +350,12 @@ namespace Cursos {
                     this.tableProfessor.InitVars();
                 }
             }
-            this.relationProfessorCurso = this.Relations["ProfessorCurso"];
             this.relationPerfilFuncionario = this.Relations["PerfilFuncionario"];
-            this.relationCursoItemLocacao = this.Relations["CursoItemLocacao"];
             this.relationLocacaoItemLocacao = this.Relations["LocacaoItemLocacao"];
             this.relationClienteLocacao = this.Relations["ClienteLocacao"];
             this.relationFuncionarioLocacao = this.Relations["FuncionarioLocacao"];
+            this.relationCursoItemLocacao = this.Relations["CursoItemLocacao"];
+            this.relationProfessorCurso = this.Relations["ProfessorCurso"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -380,18 +380,10 @@ namespace Cursos {
             base.Tables.Add(this.tablePerfil);
             this.tableProfessor = new ProfessorDataTable();
             base.Tables.Add(this.tableProfessor);
-            this.relationProfessorCurso = new global::System.Data.DataRelation("ProfessorCurso", new global::System.Data.DataColumn[] {
-                        this.tableProfessor.idProfessorColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCurso.idProfessorColumn}, false);
-            this.Relations.Add(this.relationProfessorCurso);
             this.relationPerfilFuncionario = new global::System.Data.DataRelation("PerfilFuncionario", new global::System.Data.DataColumn[] {
                         this.tablePerfil.idPerfilColumn}, new global::System.Data.DataColumn[] {
                         this.tableFuncionario.idPerfilColumn}, false);
             this.Relations.Add(this.relationPerfilFuncionario);
-            this.relationCursoItemLocacao = new global::System.Data.DataRelation("CursoItemLocacao", new global::System.Data.DataColumn[] {
-                        this.tableCurso.idCursoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableItemLocacao.idCursoColumn}, false);
-            this.Relations.Add(this.relationCursoItemLocacao);
             this.relationLocacaoItemLocacao = new global::System.Data.DataRelation("LocacaoItemLocacao", new global::System.Data.DataColumn[] {
                         this.tableLocacao.idLocacaoColumn}, new global::System.Data.DataColumn[] {
                         this.tableItemLocacao.idLocacaoColumn}, false);
@@ -404,6 +396,14 @@ namespace Cursos {
                         this.tableFuncionario.idFuncionarioColumn}, new global::System.Data.DataColumn[] {
                         this.tableLocacao.idFuncionarioColumn}, false);
             this.Relations.Add(this.relationFuncionarioLocacao);
+            this.relationCursoItemLocacao = new global::System.Data.DataRelation("CursoItemLocacao", new global::System.Data.DataColumn[] {
+                        this.tableCurso.idCursoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableItemLocacao.idCursoColumn}, false);
+            this.Relations.Add(this.relationCursoItemLocacao);
+            this.relationProfessorCurso = new global::System.Data.DataRelation("ProfessorCurso", new global::System.Data.DataColumn[] {
+                        this.tableProfessor.idProfessorColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCurso.idProfessorColumn}, false);
+            this.Relations.Add(this.relationProfessorCurso);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3423,23 +3423,23 @@ namespace Cursos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CursoRow CursoRow {
-                get {
-                    return ((CursoRow)(this.GetParentRow(this.Table.ParentRelations["CursoItemLocacao"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["CursoItemLocacao"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LocacaoRow LocacaoRow {
                 get {
                     return ((LocacaoRow)(this.GetParentRow(this.Table.ParentRelations["LocacaoItemLocacao"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["LocacaoItemLocacao"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CursoRow CursoRow {
+                get {
+                    return ((CursoRow)(this.GetParentRow(this.Table.ParentRelations["CursoItemLocacao"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["CursoItemLocacao"]);
                 }
             }
             
@@ -5299,11 +5299,16 @@ namespace Cursos.BDECursosDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idFuncionario, Nome, Login, Senha, Situacao, idPerfil FROM Funcionario";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT idFuncionario, Nome, Login, Senha, Situacao, idPerfil \r\nFROM Funcionario\r\n" +
+                "WHERE Login == ? AND Senha == ?";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5325,6 +5330,30 @@ namespace Cursos.BDECursosDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual BDECursosDataSet.FuncionarioDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            BDECursosDataSet.FuncionarioDataTable dataTable = new BDECursosDataSet.FuncionarioDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBylogin(BDECursosDataSet.FuncionarioDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual BDECursosDataSet.FuncionarioDataTable GetDataBylogin() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             BDECursosDataSet.FuncionarioDataTable dataTable = new BDECursosDataSet.FuncionarioDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7494,21 +7523,21 @@ namespace Cursos.BDECursosDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cursoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Curso.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._cursoTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._locacaoTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Locacao.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._locacaoTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._cursoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Curso.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._cursoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -7563,19 +7592,19 @@ namespace Cursos.BDECursosDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cursoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Curso.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._cursoTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._locacaoTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Locacao.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._locacaoTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._cursoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Curso.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._cursoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -7605,19 +7634,19 @@ namespace Cursos.BDECursosDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._locacaoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Locacao.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._locacaoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._cursoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Curso.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._cursoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._locacaoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Locacao.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._locacaoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

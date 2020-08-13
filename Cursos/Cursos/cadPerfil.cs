@@ -42,7 +42,7 @@ namespace Cursos
             this.Validate();
             this.perfilBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-            MessageBox.Show("Registro Salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btCadastrar_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace Cursos
             this.Validate();
             this.perfilBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-            MessageBox.Show("Registro Salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)

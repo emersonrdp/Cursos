@@ -264,6 +264,7 @@
             this.idPerfilTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.perfilBindingSource, "idPerfil", true));
             this.idPerfilTextBox.Location = new System.Drawing.Point(112, 73);
             this.idPerfilTextBox.Name = "idPerfilTextBox";
+            this.idPerfilTextBox.ReadOnly = true;
             this.idPerfilTextBox.Size = new System.Drawing.Size(560, 20);
             this.idPerfilTextBox.TabIndex = 1;
             // 

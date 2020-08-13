@@ -306,6 +306,7 @@
             this.idClienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "idCliente", true));
             this.idClienteTextBox.Location = new System.Drawing.Point(112, 62);
             this.idClienteTextBox.Name = "idClienteTextBox";
+            this.idClienteTextBox.ReadOnly = true;
             this.idClienteTextBox.Size = new System.Drawing.Size(559, 20);
             this.idClienteTextBox.TabIndex = 1;
             // 

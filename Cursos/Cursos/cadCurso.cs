@@ -42,7 +42,7 @@ namespace Cursos
             this.Validate();
             this.cursoBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-            MessageBox.Show("Registro Salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btCadastrar_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace Cursos
             this.Validate();
             this.cursoBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-            MessageBox.Show("Registro Salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -68,5 +68,32 @@ namespace Cursos
                 this.cursoTableAdapter.Fill(this.bDECursosDataSet.Curso);   // exibe novamente o formulario
             }
         }
+
+        private void btAbrirImagem_Click(object sender, EventArgs e)   // botão para abrir a imagem de capa do curso
+        {
+            if (openFileDialogImagem.ShowDialog() == DialogResult.OK)
+            {
+                textBoxImagem.Text = openFileDialogImagem.FileName;
+                pictureBoxImagem.ImageLocation = openFileDialogImagem.FileName;
+            }
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.cursoBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+            MessageBox.Show("Comentário salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void toolStripButton14_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.cursoBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+            MessageBox.Show("Imagem salva com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
+// ver como implementar para o novo campo adicionado no BD (ImagemDaCapaCurso) no projeto
+// ver implementação de loginatraves do cadastro de funcionario
