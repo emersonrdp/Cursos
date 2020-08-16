@@ -28,7 +28,7 @@ namespace Cursos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falha ao salvar o registro.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Falha ao salvar o registro: " + ex.Message, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -68,5 +68,10 @@ namespace Cursos
             this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
             MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void textBoxPesquisaProfessor_TextChanged(object sender, EventArgs e)
+        {
+            this.professorTableAdapter.FillByPesquisaProfessor(bDECursosDataSet.Professor, textBoxPesquisaProfessor.Text);
+        }
     }
 }

@@ -68,5 +68,15 @@ namespace Cursos
                 this.funcionarioTableAdapter.Fill(this.bDECursosDataSet.Funcionario);   // exibe novamente o formulario
             }
         }
+
+        private void textBoxPesquisaCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPesquisaFuncionario_TextChanged(object sender, EventArgs e)
+        {
+            this.funcionarioTableAdapter.FillByPesquisaFuncionario(bDECursosDataSet.Funcionario, textBoxPesquisaFuncionario.Text);
+        }
     }
 }

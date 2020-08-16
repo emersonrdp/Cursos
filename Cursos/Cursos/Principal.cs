@@ -77,5 +77,13 @@ namespace Cursos
         {
             Application.Exit();
         }
+
+        // MENU CONSULTAS
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cadCliente frmCliente = new cadCliente();
+            frmCliente.Show();
+        }
     }
 }
+// implementar abertura de consulta no menu

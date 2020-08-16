@@ -42,8 +42,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cursoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bDECursosDataSet = new Cursos.BDECursosDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -93,6 +91,8 @@
             this.pictureBoxImagem = new System.Windows.Forms.PictureBox();
             this.btAbrirImagem = new System.Windows.Forms.Button();
             this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bDECursosDataSet = new Cursos.BDECursosDataSet();
             this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
             this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
             comentarioLabel = new System.Windows.Forms.Label();
@@ -105,8 +105,6 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingNavigator)).BeginInit();
             this.cursoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -114,6 +112,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
             this.bindingNavigator2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // comentarioLabel
@@ -173,6 +173,7 @@
             // 
             // btCancelar
             // 
+            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelar.Location = new System.Drawing.Point(514, 391);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(106, 35);
@@ -183,6 +184,7 @@
             // 
             // btCadastrar
             // 
+            this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCadastrar.Location = new System.Drawing.Point(639, 391);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(106, 35);
@@ -261,16 +263,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
-            // 
-            // cursoBindingSource
-            // 
-            this.cursoBindingSource.DataMember = "Curso";
-            this.cursoBindingSource.DataSource = this.bDECursosDataSet;
-            // 
-            // bDECursosDataSet
-            // 
-            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
-            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -721,6 +713,16 @@
             // 
             this.openFileDialogImagem.FileName = "openFileDialog1";
             // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataMember = "Curso";
+            this.cursoBindingSource.DataSource = this.bDECursosDataSet;
+            // 
+            // bDECursosDataSet
+            // 
+            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
+            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cursoTableAdapter
             // 
             this.cursoTableAdapter.ClearBeforeFill = true;
@@ -759,8 +761,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingNavigator)).EndInit();
             this.cursoBindingNavigator.ResumeLayout(false);
             this.cursoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
@@ -772,6 +772,8 @@
             this.bindingNavigator2.ResumeLayout(false);
             this.bindingNavigator2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
