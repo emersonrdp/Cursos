@@ -19,10 +19,17 @@ namespace Cursos
 
         private void cursoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.cursoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-
+            try
+            {
+                this.Validate();
+                this.cursoBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+                MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao salvar o registro.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cadCurso_Load(object sender, EventArgs e)
@@ -35,22 +42,6 @@ namespace Cursos
         private void btCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();   /// fechar a janela de cadastro de cursos
-        }
-
-        private void cursoBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.cursoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-            MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btCadastrar_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.cursoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-            MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -78,7 +69,7 @@ namespace Cursos
             }
         }
 
-        private void toolStripButton7_Click(object sender, EventArgs e)
+        private void toolStripButton7_Click(object sender, EventArgs e)   // Salvar comentário
         {
             this.Validate();
             this.cursoBindingSource.EndEdit();
@@ -86,7 +77,7 @@ namespace Cursos
             MessageBox.Show("Comentário salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void toolStripButton14_Click(object sender, EventArgs e)
+        private void toolStripButton14_Click(object sender, EventArgs e)   // Salvar imagem
         {
             this.Validate();
             this.cursoBindingSource.EndEdit();
@@ -96,4 +87,3 @@ namespace Cursos
     }
 }
 // ver como implementar para o novo campo adicionado no BD (ImagemDaCapaCurso) no projeto
-// ver implementação de loginatraves do cadastro de funcionario

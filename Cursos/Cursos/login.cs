@@ -24,13 +24,12 @@ namespace Cursos
 
         private void bt_entrar_Click(object sender, EventArgs e)
         {
-            //int resultado = funcionarioTableAdapter.FillBylogin(bDECursosDataSet, textBoxUsuario, textBoxSenha);
-            //if (resultado = 1)
-            if (textBoxUsuario.Text == "Emerson" && textBoxSenha.Text == "123")
+            int resultado = funcionarioTableAdapter.FillBylogin(bDECursosDataSet.Funcionario, textBoxUsuario.Text, textBoxSenha.Text);
+            if (resultado == 1)
             {
                 Principal frmPrincipal = new Principal();   // criar um novo login para abrir a tela de login
-                frmPrincipal.Show();   // exibir o formulário
-                this.Visible = false;
+                frmPrincipal.Show();    // exibir o formulário
+                this.Visible = false;   // feechar a tela de login após abrir a tela princial.
             }
             else
             {

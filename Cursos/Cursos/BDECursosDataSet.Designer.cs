@@ -5306,9 +5306,11 @@ namespace Cursos.BDECursosDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT idFuncionario, Nome, Login, Senha, Situacao, idPerfil \r\nFROM Funcionario\r\n" +
-                "WHERE Login == ? AND Senha == ?";
+            this._commandCollection[1].CommandText = "SELECT        idFuncionario, Nome, Login, Senha, Situacao, idPerfil\r\nFROM        " +
+                "    Funcionario\r\nWHERE        (Login = ?) AND (Senha = ?) AND (Situacao = True)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Login", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Login", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Senha", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Senha", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5339,8 +5341,20 @@ namespace Cursos.BDECursosDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBylogin(BDECursosDataSet.FuncionarioDataTable dataTable) {
+        public virtual int FillBylogin(BDECursosDataSet.FuncionarioDataTable dataTable, string Login, string Senha) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Login == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Login));
+            }
+            if ((Senha == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Senha));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -5352,8 +5366,20 @@ namespace Cursos.BDECursosDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual BDECursosDataSet.FuncionarioDataTable GetDataBylogin() {
+        public virtual BDECursosDataSet.FuncionarioDataTable GetDataBylogin(string Login, string Senha) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Login == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Login));
+            }
+            if ((Senha == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Senha));
+            }
             BDECursosDataSet.FuncionarioDataTable dataTable = new BDECursosDataSet.FuncionarioDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

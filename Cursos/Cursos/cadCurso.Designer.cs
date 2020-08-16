@@ -76,6 +76,7 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBoxImagem = new System.Windows.Forms.TextBox();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -94,7 +95,6 @@
             this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
             this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
             this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
-            this.textBoxImagem = new System.Windows.Forms.TextBox();
             comentarioLabel = new System.Windows.Forms.Label();
             descCursoLabel = new System.Windows.Forms.Label();
             tituloLabel = new System.Windows.Forms.Label();
@@ -189,7 +189,7 @@
             this.btCadastrar.TabIndex = 1;
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
-            this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
+            this.btCadastrar.Click += new System.EventHandler(this.cursoBindingNavigatorSaveItem_Click);
             // 
             // tabControl1
             // 
@@ -357,7 +357,7 @@
             this.cursoBindingNavigatorSaveItem.Name = "cursoBindingNavigatorSaveItem";
             this.cursoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.cursoBindingNavigatorSaveItem.Text = "Salvar Dados";
-            this.cursoBindingNavigatorSaveItem.Click += new System.EventHandler(this.cursoBindingNavigatorSaveItem_Click_1);
+            this.cursoBindingNavigatorSaveItem.Click += new System.EventHandler(this.cursoBindingNavigatorSaveItem_Click);
             // 
             // idCursoTextBox
             // 
@@ -563,6 +563,14 @@
             this.tabPage3.Text = "Imagem da Capa";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // textBoxImagem
+            // 
+            this.textBoxImagem.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Comentario", true));
+            this.textBoxImagem.Location = new System.Drawing.Point(40, 50);
+            this.textBoxImagem.Name = "textBoxImagem";
+            this.textBoxImagem.Size = new System.Drawing.Size(525, 20);
+            this.textBoxImagem.TabIndex = 17;
+            // 
             // bindingNavigator2
             // 
             this.bindingNavigator2.AddNewItem = this.toolStripButton8;
@@ -728,14 +736,6 @@
             this.tableAdapterManager.PerfilTableAdapter = null;
             this.tableAdapterManager.ProfessorTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // textBoxImagem
-            // 
-            this.textBoxImagem.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Comentario", true));
-            this.textBoxImagem.Location = new System.Drawing.Point(40, 50);
-            this.textBoxImagem.Name = "textBoxImagem";
-            this.textBoxImagem.Size = new System.Drawing.Size(525, 20);
-            this.textBoxImagem.TabIndex = 17;
             // 
             // cadCurso
             // 
