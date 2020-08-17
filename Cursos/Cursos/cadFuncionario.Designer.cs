@@ -352,7 +352,7 @@
             this.situacaoCheckBox.Name = "situacaoCheckBox";
             this.situacaoCheckBox.Size = new System.Drawing.Size(566, 24);
             this.situacaoCheckBox.TabIndex = 9;
-            this.situacaoCheckBox.Text = "checkBox1";
+            this.situacaoCheckBox.Text = "Sim / Não";
             this.situacaoCheckBox.UseVisualStyleBackColor = true;
             // 
             // idPerfilTextBox

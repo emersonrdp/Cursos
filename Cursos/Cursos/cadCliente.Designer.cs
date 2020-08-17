@@ -392,7 +392,7 @@
             this.clienteDataGridView.Location = new System.Drawing.Point(3, 43);
             this.clienteDataGridView.Name = "clienteDataGridView";
             this.clienteDataGridView.Size = new System.Drawing.Size(732, 271);
-            this.clienteDataGridView.TabIndex = 1;
+            this.clienteDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -446,14 +446,14 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(738, 45);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 9;
             // 
             // textBoxPesquisaCliente
             // 
             this.textBoxPesquisaCliente.Location = new System.Drawing.Point(154, 10);
             this.textBoxPesquisaCliente.Name = "textBoxPesquisaCliente";
             this.textBoxPesquisaCliente.Size = new System.Drawing.Size(559, 20);
-            this.textBoxPesquisaCliente.TabIndex = 1;
+            this.textBoxPesquisaCliente.TabIndex = 0;
             this.textBoxPesquisaCliente.TextChanged += new System.EventHandler(this.textBoxPesquisaCliente_TextChanged);
             // 
             // label1
@@ -463,7 +463,7 @@
             this.label1.Location = new System.Drawing.Point(19, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 8;
             this.label1.Text = "Informe o nome do cliente";
             // 
             // btCadastrar

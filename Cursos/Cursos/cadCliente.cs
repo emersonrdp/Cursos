@@ -7,19 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Cursos.Principal;
 
 namespace Cursos
 {
     public partial class cadCliente : Form
     {
-        public cadCliente()
+        public cadCliente(TipoTab tipoTab)
         {
             InitializeComponent();
-        }
-
-        /*public cadCliente(TipoTab tipoTab)
-        {
-            if (tipoTab == TipoTab.Consulta)
+            if (tipoTab == TipoTab.Consulta)   // controle da abertura da tela na aba cadastro ou consulta
             {
                 tabControlCliente.SelectedTab = tabPageConsulta;
             }
@@ -28,11 +25,6 @@ namespace Cursos
                 tabControlCliente.SelectedTab = tabPageCadastro;
             }
         }
-        public enum TipoTab
-        {
-            Cadastro,
-            Consulta
-        } */
 
         private void clienteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {

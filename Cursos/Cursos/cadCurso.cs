@@ -86,7 +86,7 @@ namespace Cursos
             MessageBox.Show("Imagem salva com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        // carregar imagem do curso no picture box ao mudar o curso
+        // carregar imagem do curso no picture box ao mudar o curso caso a imagem já esteja gravada no textBoxImagem
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
             if (textBoxImagem.Text != "" && textBoxImagem.Text != null)

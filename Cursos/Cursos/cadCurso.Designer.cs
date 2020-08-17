@@ -95,6 +95,8 @@
             this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
             this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
             this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tituloTextBox1 = new System.Windows.Forms.TextBox();
             comentarioLabel = new System.Windows.Forms.Label();
             descCursoLabel = new System.Windows.Forms.Label();
             tituloLabel = new System.Windows.Forms.Label();
@@ -165,11 +167,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(36, 53);
+            label1.Location = new System.Drawing.Point(36, 50);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(68, 13);
+            label1.Size = new System.Drawing.Size(112, 13);
             label1.TabIndex = 10;
-            label1.Text = "Comentarios:";
+            label1.Text = "Comentarios do curso:";
             // 
             // btCancelar
             // 
@@ -405,6 +407,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.tituloTextBox1);
             this.tabPage2.Controls.Add(this.bindingNavigator1);
             this.tabPage2.Controls.Add(label1);
             this.tabPage2.Controls.Add(this.textBox1);
@@ -546,14 +549,16 @@
             // textBox1
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Comentario", true));
-            this.textBox1.Location = new System.Drawing.Point(111, 50);
+            this.textBox1.Location = new System.Drawing.Point(39, 73);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(569, 20);
+            this.textBox1.Size = new System.Drawing.Size(641, 224);
             this.textBox1.TabIndex = 11;
             // 
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.textBoxImagem);
             this.tabPage3.Controls.Add(this.bindingNavigator2);
             this.tabPage3.Controls.Add(this.pictureBoxImagem);
@@ -743,6 +748,24 @@
             this.tableAdapterManager.ProfessorTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(583, 77);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Limpar Imagem";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // tituloTextBox1
+            // 
+            this.tituloTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Titulo", true));
+            this.tituloTextBox1.Location = new System.Drawing.Point(154, 47);
+            this.tituloTextBox1.Name = "tituloTextBox1";
+            this.tituloTextBox1.ReadOnly = true;
+            this.tituloTextBox1.Size = new System.Drawing.Size(526, 20);
+            this.tituloTextBox1.TabIndex = 13;
+            // 
             // cadCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -843,5 +866,7 @@
         private System.Windows.Forms.Button btAbrirImagem;
         private System.Windows.Forms.OpenFileDialog openFileDialogImagem;
         private System.Windows.Forms.TextBox textBoxImagem;
+        private System.Windows.Forms.TextBox tituloTextBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -17,7 +17,11 @@ namespace Cursos
         {
             InitializeComponent();
         }
-
+        public enum TipoTab   // enun utilizado para abrir os cadastros na aba de cadastro ou na aba de consulta
+        {
+            Cadastro,
+            Consulta
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             toolStripStatusData.Text = DateTime.Now.ToShortDateString();   // recbe a data atual
@@ -52,61 +56,61 @@ namespace Cursos
         }
 
         // MENU CADASTROS
+       
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadCliente frmCliente = new cadCliente(TipoTab.Cadastro);
+            frmCliente.Show();
+        }
+
+        private void professoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadProfessores frmProfessores = new cadProfessores(TipoTab.Cadastro);
+            frmProfessores.Show();
+        }
+
+        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadFuncionario frmFuncionario = new cadFuncionario(TipoTab.Cadastro);
+            frmFuncionario.Show();
+        }
+
+        private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadPerfil frmPerfil = new cadPerfil(TipoTab.Cadastro);
+            frmPerfil.Show();
+        }
+
         private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cadCurso frmCurso = new cadCurso();
             frmCurso.Show();
         }
 
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cadCliente frmCliente = new cadCliente();
-            frmCliente.Show();
-        }
-
-        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cadFuncionario frmFuncionario = new cadFuncionario();
-            frmFuncionario.Show();
-        }
-
-        private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cadPerfil frmPerfil = new cadPerfil();
-            frmPerfil.Show();
-        }
-
-        private void professoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cadProfessores frmProfessores = new cadProfessores();
-            frmProfessores.Show();
-        }
-
         // MENU CONSULTAS
         private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //cadCliente frmCliente2 = new cadCliente(TipoTab.Consulta);
-            cadCliente frmCliente2 = new cadCliente();
+            cadCliente frmCliente2 = new cadCliente(TipoTab.Consulta);
+            //cadCliente frmCliente2 = new cadCliente();
             frmCliente2.Show();
         }
 
         private void professoresToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            cadProfessores frmProfessores2 = new cadProfessores();
+            cadProfessores frmProfessores2 = new cadProfessores(TipoTab.Consulta);
             frmProfessores2.Show();
         }
 
         private void funcionáriosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            cadFuncionario frmFuncionario2 = new cadFuncionario();
+            cadFuncionario frmFuncionario2 = new cadFuncionario(TipoTab.Consulta);
             frmFuncionario2.Show();
         }
 
         private void perfilToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            cadPerfil frmPerfil2 = new cadPerfil();
+            cadPerfil frmPerfil2 = new cadPerfil(TipoTab.Consulta);
             frmPerfil2.Show();
         }
     }
 }
-// implementar abertura de consulta no menu

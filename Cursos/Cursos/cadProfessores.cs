@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Cursos.Principal;
 
 namespace Cursos
 {
     public partial class cadProfessores : Form
     {
-        public cadProfessores()
+        public cadProfessores(TipoTab tipoTab)
         {
             InitializeComponent();
+            if (tipoTab == TipoTab.Consulta)   // controle da abertura da tela na aba cadastro ou consulta
+            {
+                tabControl1.SelectedTab = tabPage2;
+            }
+            else
+            {
+                tabControl1.SelectedTab = tabPage1;   // aba cadastro
+            }
         }
 
         private void btCancelar_Click(object sender, EventArgs e)

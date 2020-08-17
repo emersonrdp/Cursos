@@ -5423,19 +5423,20 @@ namespace Cursos.BDECursosDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idFuncionario, Nome, Login, Senha, Situacao, idPerfil FROM Funcionario";
+            this._commandCollection[0].CommandText = "SELECT idFuncionario, Nome, Login, Senha, Situacao, idPerfil \r\nFROM Funcionario\r\n" +
+                "order by idFuncionario";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        idFuncionario, Nome, Login, Senha, Situacao, idPerfil\r\nFROM        " +
-                "    Funcionario\r\nWHERE        (Login = ?) AND (Senha = ?) AND (Situacao = True)";
+            this._commandCollection[1].CommandText = "SELECT Login, Nome, Senha, Situacao, idFuncionario, idPerfil FROM Funcionario WHE" +
+                "RE (Login = ?) AND (Senha = ?) AND (Situacao = True)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Login", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Login", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Senha", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Senha", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT idFuncionario, Nome, Login, Senha, Situacao, idPerfil \r\nFROM Funcionario\r\n" +
-                "WHERE (Nome like \'%\' + ? + \'%\')";
+            this._commandCollection[2].CommandText = "SELECT Login, Nome, Senha, Situacao, idFuncionario, idPerfil FROM Funcionario WHE" +
+                "RE (Nome LIKE \'%\' + ? + \'%\')";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Nome", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Nome", global::System.Data.DataRowVersion.Current, false, null));
         }
