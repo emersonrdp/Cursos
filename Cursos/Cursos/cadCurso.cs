@@ -68,7 +68,8 @@ namespace Cursos
                 pictureBoxImagem.ImageLocation = openFileDialogImagem.FileName;
             }
         }
-
+        // pictureBoxImagem.Load(textBoxImagem.Text);
+       
         private void toolStripButton7_Click(object sender, EventArgs e)   // Salvar comentário
         {
             this.Validate();
@@ -84,6 +85,55 @@ namespace Cursos
             this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
             MessageBox.Show("Imagem salva com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        // carregar imagem do curso no picture box ao mudar o curso
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            if (textBoxImagem.Text != "" && textBoxImagem.Text != null)
+            {
+                pictureBoxImagem.Load(textBoxImagem.Text);
+            }
+            else
+            {
+                pictureBoxImagem.Image = null;
+            }
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            if (textBoxImagem.Text != "" && textBoxImagem.Text != null)
+            {
+                pictureBoxImagem.Load(textBoxImagem.Text);
+            }
+            else
+            {
+                pictureBoxImagem.Image = null;
+            }
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            if (textBoxImagem.Text != "" && textBoxImagem.Text != null)
+            {
+                pictureBoxImagem.Load(textBoxImagem.Text);
+            }
+            else
+            {
+                pictureBoxImagem.Image = null;
+            }
+        }
+
+        private void toolStripButton13_Click(object sender, EventArgs e)
+        {
+            if (textBoxImagem.Text != "" && textBoxImagem.Text != null)
+            {
+                pictureBoxImagem.Load(textBoxImagem.Text);
+            }
+            else
+            {
+                pictureBoxImagem.Image = null;
+            }
+        }
+        // ------------------------------------------------------------------------- //
     }
 }
-// ver como implementar para o novo campo adicionado no BD (ImagemDaCapaCurso) no projeto

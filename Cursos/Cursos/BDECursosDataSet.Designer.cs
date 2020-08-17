@@ -877,6 +877,8 @@ namespace Cursos {
             
             private global::System.Data.DataColumn columnComentario;
             
+            private global::System.Data.DataColumn columnImagemDaCapa;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CursoDataTable() {
@@ -952,6 +954,14 @@ namespace Cursos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ImagemDaCapaColumn {
+                get {
+                    return this.columnImagemDaCapa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -987,14 +997,15 @@ namespace Cursos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CursoRow AddCursoRow(ProfessorRow parentProfessorRowByProfessorCurso, string Titulo, string DescCurso, string Comentario) {
+            public CursoRow AddCursoRow(ProfessorRow parentProfessorRowByProfessorCurso, string Titulo, string DescCurso, string Comentario, string ImagemDaCapa) {
                 CursoRow rowCursoRow = ((CursoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         Titulo,
                         DescCurso,
-                        Comentario};
+                        Comentario,
+                        ImagemDaCapa};
                 if ((parentProfessorRowByProfessorCurso != null)) {
                     columnValuesArray[1] = parentProfessorRowByProfessorCurso[0];
                 }
@@ -1032,6 +1043,7 @@ namespace Cursos {
                 this.columnTitulo = base.Columns["Titulo"];
                 this.columnDescCurso = base.Columns["DescCurso"];
                 this.columnComentario = base.Columns["Comentario"];
+                this.columnImagemDaCapa = base.Columns["ImagemDaCapa"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1047,6 +1059,8 @@ namespace Cursos {
                 base.Columns.Add(this.columnDescCurso);
                 this.columnComentario = new global::System.Data.DataColumn("Comentario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnComentario);
+                this.columnImagemDaCapa = new global::System.Data.DataColumn("ImagemDaCapa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImagemDaCapa);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidCurso}, true));
                 this.columnidCurso.AutoIncrement = true;
@@ -1057,6 +1071,7 @@ namespace Cursos {
                 this.columnTitulo.MaxLength = 255;
                 this.columnDescCurso.MaxLength = 255;
                 this.columnComentario.MaxLength = 255;
+                this.columnImagemDaCapa.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3091,6 +3106,22 @@ namespace Cursos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ImagemDaCapa {
+                get {
+                    try {
+                        return ((string)(this[this.tableCurso.ImagemDaCapaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ImagemDaCapa\' na tabela \'Curso\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCurso.ImagemDaCapaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ProfessorRow ProfessorRow {
                 get {
                     return ((ProfessorRow)(this.GetParentRow(this.Table.ParentRelations["ProfessorCurso"])));
@@ -3146,6 +3177,18 @@ namespace Cursos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetComentarioNull() {
                 this[this.tableCurso.ComentarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsImagemDaCapaNull() {
+                return this.IsNull(this.tableCurso.ImagemDaCapaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetImagemDaCapaNull() {
+                this[this.tableCurso.ImagemDaCapaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4866,10 +4909,11 @@ namespace Cursos.BDECursosDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Titulo", "Titulo");
             tableMapping.ColumnMappings.Add("DescCurso", "DescCurso");
             tableMapping.ColumnMappings.Add("Comentario", "Comentario");
+            tableMapping.ColumnMappings.Add("ImagemDaCapa", "ImagemDaCapa");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Curso` WHERE ((`idCurso` = ?) AND ((? = 1 AND `idProfessor` IS NULL) OR (`idProfessor` = ?)) AND ((? = 1 AND `Titulo` IS NULL) OR (`Titulo` = ?)) AND ((? = 1 AND `DescCurso` IS NULL) OR (`DescCurso` = ?)) AND ((? = 1 AND `Comentario` IS NULL) OR (`Comentario` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `Curso` WHERE ((`idCurso` = ?) AND ((? = 1 AND `idProfessor` IS NULL) OR (`idProfessor` = ?)) AND ((? = 1 AND `Titulo` IS NULL) OR (`Titulo` = ?)) AND ((? = 1 AND `DescCurso` IS NULL) OR (`DescCurso` = ?)) AND ((? = 1 AND `Comentario` IS NULL) OR (`Comentario` = ?)) AND ((? = 1 AND `ImagemDaCapa` IS NULL) OR (`ImagemDaCapa` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idCurso", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idCurso", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_idProfessor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idProfessor", global::System.Data.DataRowVersion.Original, true, null));
@@ -4880,23 +4924,27 @@ namespace Cursos.BDECursosDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DescCurso", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DescCurso", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Comentario", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Comentario", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Comentario", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Comentario", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ImagemDaCapa", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ImagemDaCapa", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ImagemDaCapa", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ImagemDaCapa", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Curso` (`idProfessor`, `Titulo`, `DescCurso`, `Comentario`) VALUES (" +
-                "?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Curso` (`idProfessor`, `Titulo`, `DescCurso`, `Comentario`, `ImagemD" +
+                "aCapa`) VALUES (?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idProfessor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idProfessor", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Titulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DescCurso", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DescCurso", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Comentario", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Comentario", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ImagemDaCapa", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ImagemDaCapa", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `Curso` SET `idProfessor` = ?, `Titulo` = ?, `DescCurso` = ?, `Comentario` = ? WHERE ((`idCurso` = ?) AND ((? = 1 AND `idProfessor` IS NULL) OR (`idProfessor` = ?)) AND ((? = 1 AND `Titulo` IS NULL) OR (`Titulo` = ?)) AND ((? = 1 AND `DescCurso` IS NULL) OR (`DescCurso` = ?)) AND ((? = 1 AND `Comentario` IS NULL) OR (`Comentario` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `Curso` SET `idProfessor` = ?, `Titulo` = ?, `DescCurso` = ?, `Comentario` = ?, `ImagemDaCapa` = ? WHERE ((`idCurso` = ?) AND ((? = 1 AND `idProfessor` IS NULL) OR (`idProfessor` = ?)) AND ((? = 1 AND `Titulo` IS NULL) OR (`Titulo` = ?)) AND ((? = 1 AND `DescCurso` IS NULL) OR (`DescCurso` = ?)) AND ((? = 1 AND `Comentario` IS NULL) OR (`Comentario` = ?)) AND ((? = 1 AND `ImagemDaCapa` IS NULL) OR (`ImagemDaCapa` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idProfessor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idProfessor", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Titulo", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Titulo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("DescCurso", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DescCurso", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Comentario", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Comentario", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ImagemDaCapa", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ImagemDaCapa", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idCurso", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idCurso", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_idProfessor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idProfessor", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_idProfessor", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "idProfessor", global::System.Data.DataRowVersion.Original, false, null));
@@ -4906,6 +4954,8 @@ namespace Cursos.BDECursosDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_DescCurso", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "DescCurso", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Comentario", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Comentario", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Comentario", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Comentario", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_ImagemDaCapa", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ImagemDaCapa", global::System.Data.DataRowVersion.Original, true, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ImagemDaCapa", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ImagemDaCapa", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4921,7 +4971,8 @@ namespace Cursos.BDECursosDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idCurso, idProfessor, Titulo, DescCurso, Comentario FROM Curso";
+            this._commandCollection[0].CommandText = "SELECT idCurso, idProfessor, Titulo, DescCurso, Comentario, ImagemDaCapa FROM Cur" +
+                "so";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4982,7 +5033,7 @@ namespace Cursos.BDECursosDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idCurso, global::System.Nullable<int> Original_idProfessor, string Original_Titulo, string Original_DescCurso, string Original_Comentario) {
+        public virtual int Delete(int Original_idCurso, global::System.Nullable<int> Original_idProfessor, string Original_Titulo, string Original_DescCurso, string Original_Comentario, string Original_ImagemDaCapa) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idCurso));
             if ((Original_idProfessor.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -5016,6 +5067,14 @@ namespace Cursos.BDECursosDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Comentario));
             }
+            if ((Original_ImagemDaCapa == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_ImagemDaCapa));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5036,7 +5095,7 @@ namespace Cursos.BDECursosDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> idProfessor, string Titulo, string DescCurso, string Comentario) {
+        public virtual int Insert(global::System.Nullable<int> idProfessor, string Titulo, string DescCurso, string Comentario, string ImagemDaCapa) {
             if ((idProfessor.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idProfessor.Value));
             }
@@ -5061,6 +5120,12 @@ namespace Cursos.BDECursosDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Comentario));
             }
+            if ((ImagemDaCapa == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ImagemDaCapa));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5081,7 +5146,7 @@ namespace Cursos.BDECursosDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> idProfessor, string Titulo, string DescCurso, string Comentario, int Original_idCurso, global::System.Nullable<int> Original_idProfessor, string Original_Titulo, string Original_DescCurso, string Original_Comentario) {
+        public virtual int Update(global::System.Nullable<int> idProfessor, string Titulo, string DescCurso, string Comentario, string ImagemDaCapa, int Original_idCurso, global::System.Nullable<int> Original_idProfessor, string Original_Titulo, string Original_DescCurso, string Original_Comentario, string Original_ImagemDaCapa) {
             if ((idProfessor.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idProfessor.Value));
             }
@@ -5106,38 +5171,52 @@ namespace Cursos.BDECursosDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Comentario));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_idCurso));
-            if ((Original_idProfessor.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_idProfessor.Value));
+            if ((ImagemDaCapa == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ImagemDaCapa));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_idCurso));
+            if ((Original_idProfessor.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_idProfessor.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             if ((Original_Titulo == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Titulo));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Titulo));
             }
             if ((Original_DescCurso == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_DescCurso));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_DescCurso));
             }
             if ((Original_Comentario == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Comentario));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Comentario));
+            }
+            if ((Original_ImagemDaCapa == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_ImagemDaCapa));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
