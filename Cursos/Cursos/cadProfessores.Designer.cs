@@ -64,13 +64,6 @@
             this.telefoneTextBox = new System.Windows.Forms.TextBox();
             this.cEPTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btCadastrar = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
-            this.professorTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ProfessorTableAdapter();
-            this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxPesquisaProfessor = new System.Windows.Forms.TextBox();
             this.professorDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +73,13 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxPesquisaProfessor = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btCadastrar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.professorTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ProfessorTableAdapter();
+            this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
             idProfessorLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             endereçoLabel = new System.Windows.Forms.Label();
@@ -95,8 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.professorDataGridView)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // idProfessorLabel
@@ -342,7 +342,7 @@
             this.professorBindingNavigatorSaveItem.Name = "professorBindingNavigatorSaveItem";
             this.professorBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.professorBindingNavigatorSaveItem.Text = "Salvar Dados";
-            this.professorBindingNavigatorSaveItem.Click += new System.EventHandler(this.professorBindingNavigatorSaveItem_Click_1);
+            this.professorBindingNavigatorSaveItem.Click += new System.EventHandler(this.professorBindingNavigatorSaveItem_Click);
             // 
             // idProfessorTextBox
             // 
@@ -421,70 +421,6 @@
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btCadastrar
-            // 
-            this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(638, 392);
-            this.btCadastrar.Name = "btCadastrar";
-            this.btCadastrar.Size = new System.Drawing.Size(106, 35);
-            this.btCadastrar.TabIndex = 4;
-            this.btCadastrar.Text = "Cadastrar";
-            this.btCadastrar.UseVisualStyleBackColor = true;
-            this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(513, 392);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(106, 35);
-            this.btCancelar.TabIndex = 3;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // professorTableAdapter
-            // 
-            this.professorTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ClienteTableAdapter = null;
-            this.tableAdapterManager.CursoTableAdapter = null;
-            this.tableAdapterManager.FuncionarioTableAdapter = null;
-            this.tableAdapterManager.ItemLocacaoTableAdapter = null;
-            this.tableAdapterManager.LocacaoTableAdapter = null;
-            this.tableAdapterManager.PerfilTableAdapter = null;
-            this.tableAdapterManager.ProfessorTableAdapter = this.professorTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBoxPesquisaProfessor);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 40);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Informe o nome do professor";
-            // 
-            // textBoxPesquisaProfessor
-            // 
-            this.textBoxPesquisaProfessor.Location = new System.Drawing.Point(166, 11);
-            this.textBoxPesquisaProfessor.Name = "textBoxPesquisaProfessor";
-            this.textBoxPesquisaProfessor.Size = new System.Drawing.Size(547, 20);
-            this.textBoxPesquisaProfessor.TabIndex = 1;
-            this.textBoxPesquisaProfessor.TextChanged += new System.EventHandler(this.textBoxPesquisaProfessor_TextChanged);
-            // 
             // professorDataGridView
             // 
             this.professorDataGridView.AutoGenerateColumns = false;
@@ -562,6 +498,70 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 80;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBoxPesquisaProfessor);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(738, 40);
+            this.panel1.TabIndex = 0;
+            // 
+            // textBoxPesquisaProfessor
+            // 
+            this.textBoxPesquisaProfessor.Location = new System.Drawing.Point(166, 11);
+            this.textBoxPesquisaProfessor.Name = "textBoxPesquisaProfessor";
+            this.textBoxPesquisaProfessor.Size = new System.Drawing.Size(547, 20);
+            this.textBoxPesquisaProfessor.TabIndex = 1;
+            this.textBoxPesquisaProfessor.TextChanged += new System.EventHandler(this.textBoxPesquisaProfessor_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Informe o nome do professor";
+            // 
+            // btCadastrar
+            // 
+            this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCadastrar.Location = new System.Drawing.Point(638, 392);
+            this.btCadastrar.Name = "btCadastrar";
+            this.btCadastrar.Size = new System.Drawing.Size(106, 35);
+            this.btCadastrar.TabIndex = 4;
+            this.btCadastrar.Text = "Cadastrar";
+            this.btCadastrar.UseVisualStyleBackColor = true;
+            this.btCadastrar.Click += new System.EventHandler(this.professorBindingNavigatorSaveItem_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(513, 392);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(106, 35);
+            this.btCancelar.TabIndex = 3;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // professorTableAdapter
+            // 
+            this.professorTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClienteTableAdapter = null;
+            this.tableAdapterManager.CursoTableAdapter = null;
+            this.tableAdapterManager.FuncionarioTableAdapter = null;
+            this.tableAdapterManager.ItemLocacaoTableAdapter = null;
+            this.tableAdapterManager.LocacaoTableAdapter = null;
+            this.tableAdapterManager.PerfilTableAdapter = null;
+            this.tableAdapterManager.ProfessorTableAdapter = this.professorTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // cadProfessores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -587,9 +587,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.professorDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.professorDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

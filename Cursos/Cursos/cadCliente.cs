@@ -17,12 +17,36 @@ namespace Cursos
             InitializeComponent();
         }
 
+        /*public cadCliente(TipoTab tipoTab)
+        {
+            if (tipoTab == TipoTab.Consulta)
+            {
+                tabControlCliente.SelectedTab = tabPageConsulta;
+            }
+            else
+            {
+                tabControlCliente.SelectedTab = tabPageCadastro;
+            }
+        }
+        public enum TipoTab
+        {
+            Cadastro,
+            Consulta
+        } */
+
         private void clienteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.clienteBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-
+            try
+            {
+                this.Validate();
+                this.clienteBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+                MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao salvar o registro: " + ex.Message, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cadCliente_Load(object sender, EventArgs e)
@@ -35,22 +59,6 @@ namespace Cursos
         private void btCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();   /// fechar a janela de cadastro de clientes
-        }
-
-        private void clienteBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.clienteBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-            MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btCadastrar_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.clienteBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-            MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)

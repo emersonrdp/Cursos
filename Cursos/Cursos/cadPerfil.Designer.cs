@@ -55,6 +55,9 @@
             this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.perfilDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxPesquisaPerfil = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,9 +65,6 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.perfilTableAdapter = new Cursos.BDECursosDataSetTableAdapters.PerfilTableAdapter();
             this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idPerfilLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             descricaoLabel = new System.Windows.Forms.Label();
@@ -267,7 +267,7 @@
             this.perfilBindingNavigatorSaveItem.Name = "perfilBindingNavigatorSaveItem";
             this.perfilBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.perfilBindingNavigatorSaveItem.Text = "Salvar Dados";
-            this.perfilBindingNavigatorSaveItem.Click += new System.EventHandler(this.perfilBindingNavigatorSaveItem_Click_1);
+            this.perfilBindingNavigatorSaveItem.Click += new System.EventHandler(this.perfilBindingNavigatorSaveItem_Click);
             // 
             // idPerfilTextBox
             // 
@@ -322,6 +322,28 @@
             this.perfilDataGridView.Size = new System.Drawing.Size(732, 267);
             this.perfilDataGridView.TabIndex = 1;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idPerfil";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ToolTipText = "Código do perfil";
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descricao";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 330;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.textBoxPesquisaPerfil);
@@ -357,7 +379,7 @@
             this.btCadastrar.TabIndex = 13;
             this.btCadastrar.Text = "Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = true;
-            this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
+            this.btCadastrar.Click += new System.EventHandler(this.perfilBindingNavigatorSaveItem_Click);
             // 
             // btCancelar
             // 
@@ -385,28 +407,6 @@
             this.tableAdapterManager.PerfilTableAdapter = this.perfilTableAdapter;
             this.tableAdapterManager.ProfessorTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idPerfil";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Código";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ToolTipText = "Código do perfil";
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descricao";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 330;
             // 
             // cadPerfil
             // 

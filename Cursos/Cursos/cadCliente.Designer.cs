@@ -36,8 +36,8 @@
             System.Windows.Forms.Label uFLabel;
             System.Windows.Forms.Label cEPLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadCliente));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControlCliente = new System.Windows.Forms.TabControl();
+            this.tabPageCadastro = new System.Windows.Forms.TabPage();
             this.clienteBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -59,8 +59,14 @@
             this.cidadeTextBox = new System.Windows.Forms.TextBox();
             this.uFTextBox = new System.Windows.Forms.TextBox();
             this.cEPTextBox = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageConsulta = new System.Windows.Forms.TabPage();
             this.clienteDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxPesquisaCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,25 +74,19 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.clienteTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ClienteTableAdapter();
             this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idClienteLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             enderecoLabel = new System.Windows.Forms.Label();
             cidadeLabel = new System.Windows.Forms.Label();
             uFLabel = new System.Windows.Forms.Label();
             cEPLabel = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabControlCliente.SuspendLayout();
+            this.tabPageCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingNavigator)).BeginInit();
             this.clienteBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabPageConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -145,38 +145,38 @@
             cEPLabel.TabIndex = 10;
             cEPLabel.Text = "CEP:";
             // 
-            // tabControl1
+            // tabControlCliente
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(27, 23);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(746, 343);
-            this.tabControl1.TabIndex = 8;
+            this.tabControlCliente.Controls.Add(this.tabPageCadastro);
+            this.tabControlCliente.Controls.Add(this.tabPageConsulta);
+            this.tabControlCliente.Location = new System.Drawing.Point(27, 23);
+            this.tabControlCliente.Name = "tabControlCliente";
+            this.tabControlCliente.SelectedIndex = 0;
+            this.tabControlCliente.Size = new System.Drawing.Size(746, 343);
+            this.tabControlCliente.TabIndex = 8;
             // 
-            // tabPage1
+            // tabPageCadastro
             // 
-            this.tabPage1.Controls.Add(this.clienteBindingNavigator);
-            this.tabPage1.Controls.Add(idClienteLabel);
-            this.tabPage1.Controls.Add(this.idClienteTextBox);
-            this.tabPage1.Controls.Add(nomeLabel);
-            this.tabPage1.Controls.Add(this.nomeTextBox);
-            this.tabPage1.Controls.Add(enderecoLabel);
-            this.tabPage1.Controls.Add(this.enderecoTextBox);
-            this.tabPage1.Controls.Add(cidadeLabel);
-            this.tabPage1.Controls.Add(this.cidadeTextBox);
-            this.tabPage1.Controls.Add(uFLabel);
-            this.tabPage1.Controls.Add(this.uFTextBox);
-            this.tabPage1.Controls.Add(cEPLabel);
-            this.tabPage1.Controls.Add(this.cEPTextBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(738, 317);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Cadastro";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageCadastro.Controls.Add(this.clienteBindingNavigator);
+            this.tabPageCadastro.Controls.Add(idClienteLabel);
+            this.tabPageCadastro.Controls.Add(this.idClienteTextBox);
+            this.tabPageCadastro.Controls.Add(nomeLabel);
+            this.tabPageCadastro.Controls.Add(this.nomeTextBox);
+            this.tabPageCadastro.Controls.Add(enderecoLabel);
+            this.tabPageCadastro.Controls.Add(this.enderecoTextBox);
+            this.tabPageCadastro.Controls.Add(cidadeLabel);
+            this.tabPageCadastro.Controls.Add(this.cidadeTextBox);
+            this.tabPageCadastro.Controls.Add(uFLabel);
+            this.tabPageCadastro.Controls.Add(this.uFTextBox);
+            this.tabPageCadastro.Controls.Add(cEPLabel);
+            this.tabPageCadastro.Controls.Add(this.cEPTextBox);
+            this.tabPageCadastro.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCadastro.Name = "tabPageCadastro";
+            this.tabPageCadastro.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCadastro.Size = new System.Drawing.Size(738, 317);
+            this.tabPageCadastro.TabIndex = 0;
+            this.tabPageCadastro.Text = "Cadastro";
+            this.tabPageCadastro.UseVisualStyleBackColor = true;
             // 
             // clienteBindingNavigator
             // 
@@ -312,7 +312,7 @@
             this.clienteBindingNavigatorSaveItem.Name = "clienteBindingNavigatorSaveItem";
             this.clienteBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.clienteBindingNavigatorSaveItem.Text = "Salvar Dados";
-            this.clienteBindingNavigatorSaveItem.Click += new System.EventHandler(this.clienteBindingNavigatorSaveItem_Click_1);
+            this.clienteBindingNavigatorSaveItem.Click += new System.EventHandler(this.clienteBindingNavigatorSaveItem_Click);
             // 
             // idClienteTextBox
             // 
@@ -363,18 +363,18 @@
             this.cEPTextBox.Size = new System.Drawing.Size(559, 20);
             this.cEPTextBox.TabIndex = 11;
             // 
-            // tabPage2
+            // tabPageConsulta
             // 
-            this.tabPage2.AutoScroll = true;
-            this.tabPage2.Controls.Add(this.clienteDataGridView);
-            this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(738, 317);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Consulta";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageConsulta.AutoScroll = true;
+            this.tabPageConsulta.Controls.Add(this.clienteDataGridView);
+            this.tabPageConsulta.Controls.Add(this.panel1);
+            this.tabPageConsulta.Location = new System.Drawing.Point(4, 22);
+            this.tabPageConsulta.Name = "tabPageConsulta";
+            this.tabPageConsulta.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageConsulta.Size = new System.Drawing.Size(738, 317);
+            this.tabPageConsulta.TabIndex = 1;
+            this.tabPageConsulta.Text = "Consulta";
+            this.tabPageConsulta.UseVisualStyleBackColor = true;
             // 
             // clienteDataGridView
             // 
@@ -393,71 +393,6 @@
             this.clienteDataGridView.Name = "clienteDataGridView";
             this.clienteDataGridView.Size = new System.Drawing.Size(732, 271);
             this.clienteDataGridView.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBoxPesquisaCliente);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(738, 45);
-            this.panel1.TabIndex = 0;
-            // 
-            // textBoxPesquisaCliente
-            // 
-            this.textBoxPesquisaCliente.Location = new System.Drawing.Point(154, 10);
-            this.textBoxPesquisaCliente.Name = "textBoxPesquisaCliente";
-            this.textBoxPesquisaCliente.Size = new System.Drawing.Size(559, 20);
-            this.textBoxPesquisaCliente.TabIndex = 1;
-            this.textBoxPesquisaCliente.TextChanged += new System.EventHandler(this.textBoxPesquisaCliente_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Informe o nome do cliente";
-            // 
-            // btCadastrar
-            // 
-            this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(638, 392);
-            this.btCadastrar.Name = "btCadastrar";
-            this.btCadastrar.Size = new System.Drawing.Size(106, 35);
-            this.btCadastrar.TabIndex = 7;
-            this.btCadastrar.Text = "Cadastrar";
-            this.btCadastrar.UseVisualStyleBackColor = true;
-            this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(513, 392);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(106, 35);
-            this.btCancelar.TabIndex = 6;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // clienteTableAdapter
-            // 
-            this.clienteTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ClienteTableAdapter = this.clienteTableAdapter;
-            this.tableAdapterManager.CursoTableAdapter = null;
-            this.tableAdapterManager.FuncionarioTableAdapter = null;
-            this.tableAdapterManager.ItemLocacaoTableAdapter = null;
-            this.tableAdapterManager.LocacaoTableAdapter = null;
-            this.tableAdapterManager.PerfilTableAdapter = null;
-            this.tableAdapterManager.ProfessorTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -504,12 +439,77 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 80;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBoxPesquisaCliente);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(738, 45);
+            this.panel1.TabIndex = 0;
+            // 
+            // textBoxPesquisaCliente
+            // 
+            this.textBoxPesquisaCliente.Location = new System.Drawing.Point(154, 10);
+            this.textBoxPesquisaCliente.Name = "textBoxPesquisaCliente";
+            this.textBoxPesquisaCliente.Size = new System.Drawing.Size(559, 20);
+            this.textBoxPesquisaCliente.TabIndex = 1;
+            this.textBoxPesquisaCliente.TextChanged += new System.EventHandler(this.textBoxPesquisaCliente_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Informe o nome do cliente";
+            // 
+            // btCadastrar
+            // 
+            this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCadastrar.Location = new System.Drawing.Point(638, 392);
+            this.btCadastrar.Name = "btCadastrar";
+            this.btCadastrar.Size = new System.Drawing.Size(106, 35);
+            this.btCadastrar.TabIndex = 7;
+            this.btCadastrar.Text = "Cadastrar";
+            this.btCadastrar.UseVisualStyleBackColor = true;
+            this.btCadastrar.Click += new System.EventHandler(this.clienteBindingNavigatorSaveItem_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(513, 392);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(106, 35);
+            this.btCancelar.TabIndex = 6;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // clienteTableAdapter
+            // 
+            this.clienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClienteTableAdapter = this.clienteTableAdapter;
+            this.tableAdapterManager.CursoTableAdapter = null;
+            this.tableAdapterManager.FuncionarioTableAdapter = null;
+            this.tableAdapterManager.ItemLocacaoTableAdapter = null;
+            this.tableAdapterManager.LocacaoTableAdapter = null;
+            this.tableAdapterManager.PerfilTableAdapter = null;
+            this.tableAdapterManager.ProfessorTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // cadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlCliente);
             this.Controls.Add(this.btCadastrar);
             this.Controls.Add(this.btCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -520,15 +520,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Clientes";
             this.Load += new System.EventHandler(this.cadCliente_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabControlCliente.ResumeLayout(false);
+            this.tabPageCadastro.ResumeLayout(false);
+            this.tabPageCadastro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingNavigator)).EndInit();
             this.clienteBindingNavigator.ResumeLayout(false);
             this.clienteBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.tabPageConsulta.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -538,9 +538,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabControlCliente;
+        private System.Windows.Forms.TabPage tabPageCadastro;
+        private System.Windows.Forms.TabPage tabPageConsulta;
         private System.Windows.Forms.Button btCadastrar;
         private System.Windows.Forms.Button btCancelar;
         private BDECursosDataSet bDECursosDataSet;

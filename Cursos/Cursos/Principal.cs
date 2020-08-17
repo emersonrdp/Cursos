@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Cursos.cadCliente;
 
 namespace Cursos
 {
@@ -38,6 +39,19 @@ namespace Cursos
             System.Diagnostics.Process.Start("winword");   // abre o MS Word -- depois implmentar para s não achar o winword abrir o wordpad
         }
 
+        // BOTÃO SAIR
+        private void toolStripButton5_Click(object sender, EventArgs e)   // botão sair
+        {
+            Application.Exit();
+        }
+
+        // MENU SAIR
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)   // menu sair
+        {
+            Application.Exit();
+        }
+
+        // MENU CADASTROS
         private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cadCurso frmCurso = new cadCurso();
@@ -68,21 +82,30 @@ namespace Cursos
             frmProfessores.Show();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)   // menu sair
-        {
-            Application.Exit();
-        }
-
-        private void toolStripButton5_Click(object sender, EventArgs e)   // botão sair
-        {
-            Application.Exit();
-        }
-
         // MENU CONSULTAS
         private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            cadCliente frmCliente = new cadCliente();
-            frmCliente.Show();
+            //cadCliente frmCliente2 = new cadCliente(TipoTab.Consulta);
+            cadCliente frmCliente2 = new cadCliente();
+            frmCliente2.Show();
+        }
+
+        private void professoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cadProfessores frmProfessores2 = new cadProfessores();
+            frmProfessores2.Show();
+        }
+
+        private void funcionáriosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cadFuncionario frmFuncionario2 = new cadFuncionario();
+            frmFuncionario2.Show();
+        }
+
+        private void perfilToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cadPerfil frmPerfil2 = new cadPerfil();
+            frmPerfil2.Show();
         }
     }
 }

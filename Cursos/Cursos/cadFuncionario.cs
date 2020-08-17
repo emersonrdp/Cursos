@@ -19,10 +19,17 @@ namespace Cursos
 
         private void funcionarioBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.funcionarioBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-
+            try
+            {
+                this.Validate();
+                this.funcionarioBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+                MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha ao salvar o registro: " + ex.Message, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cadFuncionario_Load(object sender, EventArgs e)
@@ -35,22 +42,6 @@ namespace Cursos
         private void btCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();   /// fechar a janela de cadastro de funcionarios
-        }
-
-        private void funcionarioBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.funcionarioBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-            MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btCadastrar_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.funcionarioBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-            MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
