@@ -113,13 +113,15 @@
             this.tabControl1.Location = new System.Drawing.Point(27, 23);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(746, 343);
+            this.tabControl1.Size = new System.Drawing.Size(746, 404);
             this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.perfilBindingNavigator);
+            this.tabPage1.Controls.Add(this.btCadastrar);
             this.tabPage1.Controls.Add(idPerfilLabel);
+            this.tabPage1.Controls.Add(this.btCancelar);
             this.tabPage1.Controls.Add(this.idPerfilTextBox);
             this.tabPage1.Controls.Add(nomeLabel);
             this.tabPage1.Controls.Add(this.nomeTextBox);
@@ -128,7 +130,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(738, 317);
+            this.tabPage1.Size = new System.Drawing.Size(738, 378);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -302,7 +304,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(738, 317);
+            this.tabPage2.Size = new System.Drawing.Size(738, 378);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -317,7 +319,7 @@
             this.dataGridViewTextBoxColumn3});
             this.perfilDataGridView.DataSource = this.perfilBindingSource;
             this.perfilDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.perfilDataGridView.Location = new System.Drawing.Point(3, 47);
+            this.perfilDataGridView.Location = new System.Drawing.Point(3, 108);
             this.perfilDataGridView.Name = "perfilDataGridView";
             this.perfilDataGridView.Size = new System.Drawing.Size(732, 267);
             this.perfilDataGridView.TabIndex = 1;
@@ -373,7 +375,7 @@
             // btCadastrar
             // 
             this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(638, 392);
+            this.btCadastrar.Location = new System.Drawing.Point(566, 312);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(106, 35);
             this.btCadastrar.TabIndex = 13;
@@ -384,7 +386,7 @@
             // btCancelar
             // 
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(513, 392);
+            this.btCancelar.Location = new System.Drawing.Point(441, 312);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(106, 35);
             this.btCancelar.TabIndex = 12;
@@ -414,8 +416,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btCadastrar);
-            this.Controls.Add(this.btCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

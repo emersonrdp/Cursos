@@ -39,6 +39,7 @@ namespace Cursos
                 this.professorBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
                 MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.professorTableAdapter.Fill(this.bDECursosDataSet.Professor);   // Recarrega o formulario
             }
             catch (Exception ex)
             {
@@ -62,10 +63,13 @@ namespace Cursos
                 this.Validate();
                 this.professorBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+                MessageBox.Show("Registro excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.professorTableAdapter.Fill(this.bDECursosDataSet.Professor);   // Recarrega o formulario
             }
             else
             {
-                this.professorTableAdapter.Fill(this.bDECursosDataSet.Professor);   // exibe novamente o formulario
+                this.professorTableAdapter.Fill(this.bDECursosDataSet.Professor);   // Recarrega o formulario
+                MessageBox.Show("Operação abortada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

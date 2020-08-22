@@ -152,13 +152,15 @@
             this.tabControlCliente.Location = new System.Drawing.Point(27, 23);
             this.tabControlCliente.Name = "tabControlCliente";
             this.tabControlCliente.SelectedIndex = 0;
-            this.tabControlCliente.Size = new System.Drawing.Size(746, 343);
+            this.tabControlCliente.Size = new System.Drawing.Size(746, 403);
             this.tabControlCliente.TabIndex = 8;
             // 
             // tabPageCadastro
             // 
             this.tabPageCadastro.Controls.Add(this.clienteBindingNavigator);
+            this.tabPageCadastro.Controls.Add(this.btCadastrar);
             this.tabPageCadastro.Controls.Add(idClienteLabel);
+            this.tabPageCadastro.Controls.Add(this.btCancelar);
             this.tabPageCadastro.Controls.Add(this.idClienteTextBox);
             this.tabPageCadastro.Controls.Add(nomeLabel);
             this.tabPageCadastro.Controls.Add(this.nomeTextBox);
@@ -173,7 +175,7 @@
             this.tabPageCadastro.Location = new System.Drawing.Point(4, 22);
             this.tabPageCadastro.Name = "tabPageCadastro";
             this.tabPageCadastro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCadastro.Size = new System.Drawing.Size(738, 317);
+            this.tabPageCadastro.Size = new System.Drawing.Size(738, 377);
             this.tabPageCadastro.TabIndex = 0;
             this.tabPageCadastro.Text = "Cadastro";
             this.tabPageCadastro.UseVisualStyleBackColor = true;
@@ -371,7 +373,7 @@
             this.tabPageConsulta.Location = new System.Drawing.Point(4, 22);
             this.tabPageConsulta.Name = "tabPageConsulta";
             this.tabPageConsulta.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageConsulta.Size = new System.Drawing.Size(738, 317);
+            this.tabPageConsulta.Size = new System.Drawing.Size(738, 377);
             this.tabPageConsulta.TabIndex = 1;
             this.tabPageConsulta.Text = "Consulta";
             this.tabPageConsulta.UseVisualStyleBackColor = true;
@@ -389,7 +391,7 @@
             this.dataGridViewTextBoxColumn6});
             this.clienteDataGridView.DataSource = this.clienteBindingSource;
             this.clienteDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.clienteDataGridView.Location = new System.Drawing.Point(3, 43);
+            this.clienteDataGridView.Location = new System.Drawing.Point(3, 103);
             this.clienteDataGridView.Name = "clienteDataGridView";
             this.clienteDataGridView.Size = new System.Drawing.Size(732, 271);
             this.clienteDataGridView.TabIndex = 2;
@@ -469,7 +471,7 @@
             // btCadastrar
             // 
             this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(638, 392);
+            this.btCadastrar.Location = new System.Drawing.Point(565, 314);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(106, 35);
             this.btCadastrar.TabIndex = 7;
@@ -480,7 +482,7 @@
             // btCancelar
             // 
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(513, 392);
+            this.btCancelar.Location = new System.Drawing.Point(440, 314);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(106, 35);
             this.btCancelar.TabIndex = 6;
@@ -510,8 +512,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControlCliente);
-            this.Controls.Add(this.btCadastrar);
-            this.Controls.Add(this.btCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

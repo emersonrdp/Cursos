@@ -25,6 +25,7 @@ namespace Cursos
                 this.cursoBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
                 MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.cursoTableAdapter.Fill(this.bDECursosDataSet.Curso);   // Recarrega o formulário
             }
             catch (Exception ex)
             {
@@ -53,22 +54,31 @@ namespace Cursos
                 this.Validate();
                 this.cursoBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+                MessageBox.Show("Registro excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.cursoTableAdapter.Fill(this.bDECursosDataSet.Curso);   // Recarrega o formulário
             }
             else
             {
-                this.cursoTableAdapter.Fill(this.bDECursosDataSet.Curso);   // exibe novamente o formulario
+                this.cursoTableAdapter.Fill(this.bDECursosDataSet.Curso);   // Recarrega o formulario
+                MessageBox.Show("Operação abortada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btAbrirImagem_Click(object sender, EventArgs e)   // botão para abrir a imagem de capa do curso
         {
-            if (openFileDialogImagem.ShowDialog() == DialogResult.OK)
+            if (Convert.ToInt32(idCursoTextBox.Text) > 0)
             {
-                textBoxImagem.Text = openFileDialogImagem.FileName;
-                pictureBoxImagem.ImageLocation = openFileDialogImagem.FileName;
+                if (openFileDialogImagem.ShowDialog() == DialogResult.OK)
+                {
+                    textBoxImagem.Text = openFileDialogImagem.FileName;
+                    pictureBoxImagem.ImageLocation = openFileDialogImagem.FileName;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Salve o cadastro do livro para depois carregar a imagem da capa.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        // pictureBoxImagem.Load(textBoxImagem.Text);
        
         private void toolStripButton7_Click(object sender, EventArgs e)   // Salvar comentário
         {
@@ -132,6 +142,30 @@ namespace Cursos
             else
             {
                 pictureBoxImagem.Image = null;
+            }
+        }
+
+        private void AbaImagemDaCapa(object sender, EventArgs e)
+        {
+            if (textBoxImagem.Text != "" && textBoxImagem.Text != null)
+            {
+                pictureBoxImagem.Load(textBoxImagem.Text);
+            }
+            else
+            {
+                pictureBoxImagem.Image = null;
+            }
+        }
+
+        private void btLimparImagem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente limpar a imagem?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                textBoxImagem.Text = null;
+                pictureBoxImagem.Image = null;
+                this.Validate();
+                this.cursoBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
             }
         }
         // ------------------------------------------------------------------------- //

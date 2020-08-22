@@ -29,15 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label comentarioLabel;
             System.Windows.Forms.Label descCursoLabel;
             System.Windows.Forms.Label tituloLabel;
             System.Windows.Forms.Label idProfessorLabel;
             System.Windows.Forms.Label idCursoLabel;
             System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadCurso));
-            this.btCancelar = new System.Windows.Forms.Button();
-            this.btCadastrar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cursoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -55,12 +52,14 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cursoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.btCadastrar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
             this.idCursoTextBox = new System.Windows.Forms.TextBox();
             this.idProfessorTextBox = new System.Windows.Forms.TextBox();
             this.tituloTextBox = new System.Windows.Forms.TextBox();
             this.descCursoTextBox = new System.Windows.Forms.TextBox();
-            this.comentarioTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tituloTextBox1 = new System.Windows.Forms.TextBox();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -76,6 +75,7 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btLimparImagem = new System.Windows.Forms.Button();
             this.textBoxImagem = new System.Windows.Forms.TextBox();
             this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
@@ -95,9 +95,6 @@
             this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
             this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
             this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tituloTextBox1 = new System.Windows.Forms.TextBox();
-            comentarioLabel = new System.Windows.Forms.Label();
             descCursoLabel = new System.Windows.Forms.Label();
             tituloLabel = new System.Windows.Forms.Label();
             idProfessorLabel = new System.Windows.Forms.Label();
@@ -117,16 +114,6 @@
             this.bindingNavigator2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).BeginInit();
             this.SuspendLayout();
-            // 
-            // comentarioLabel
-            // 
-            comentarioLabel.AutoSize = true;
-            comentarioLabel.Location = new System.Drawing.Point(52, 175);
-            comentarioLabel.Name = "comentarioLabel";
-            comentarioLabel.Size = new System.Drawing.Size(63, 13);
-            comentarioLabel.TabIndex = 8;
-            comentarioLabel.Text = "Comentario:";
-            comentarioLabel.Visible = false;
             // 
             // descCursoLabel
             // 
@@ -173,28 +160,6 @@
             label1.TabIndex = 10;
             label1.Text = "Comentarios do curso:";
             // 
-            // btCancelar
-            // 
-            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(514, 391);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(106, 35);
-            this.btCancelar.TabIndex = 0;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // btCadastrar
-            // 
-            this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(639, 391);
-            this.btCadastrar.Name = "btCadastrar";
-            this.btCadastrar.Size = new System.Drawing.Size(106, 35);
-            this.btCadastrar.TabIndex = 1;
-            this.btCadastrar.Text = "Cadastrar";
-            this.btCadastrar.UseVisualStyleBackColor = true;
-            this.btCadastrar.Click += new System.EventHandler(this.cursoBindingNavigatorSaveItem_Click);
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -203,13 +168,16 @@
             this.tabControl1.Location = new System.Drawing.Point(28, 22);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(746, 343);
+            this.tabControl1.Size = new System.Drawing.Size(746, 397);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.Click += new System.EventHandler(this.AbaImagemDaCapa);
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.cursoBindingNavigator);
+            this.tabPage1.Controls.Add(this.btCadastrar);
             this.tabPage1.Controls.Add(idCursoLabel);
+            this.tabPage1.Controls.Add(this.btCancelar);
             this.tabPage1.Controls.Add(this.idCursoTextBox);
             this.tabPage1.Controls.Add(idProfessorLabel);
             this.tabPage1.Controls.Add(this.idProfessorTextBox);
@@ -217,12 +185,10 @@
             this.tabPage1.Controls.Add(this.tituloTextBox);
             this.tabPage1.Controls.Add(descCursoLabel);
             this.tabPage1.Controls.Add(this.descCursoTextBox);
-            this.tabPage1.Controls.Add(comentarioLabel);
-            this.tabPage1.Controls.Add(this.comentarioTextBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(738, 317);
+            this.tabPage1.Size = new System.Drawing.Size(738, 371);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Gerais";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -363,13 +329,35 @@
             this.cursoBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.cursoBindingNavigatorSaveItem.Click += new System.EventHandler(this.cursoBindingNavigatorSaveItem_Click);
             // 
+            // btCadastrar
+            // 
+            this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCadastrar.Location = new System.Drawing.Point(564, 312);
+            this.btCadastrar.Name = "btCadastrar";
+            this.btCadastrar.Size = new System.Drawing.Size(106, 35);
+            this.btCadastrar.TabIndex = 1;
+            this.btCadastrar.Text = "Cadastrar";
+            this.btCadastrar.UseVisualStyleBackColor = true;
+            this.btCadastrar.Click += new System.EventHandler(this.cursoBindingNavigatorSaveItem_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(439, 312);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(106, 35);
+            this.btCancelar.TabIndex = 0;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
             // idCursoTextBox
             // 
             this.idCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "idCurso", true));
             this.idCursoTextBox.Location = new System.Drawing.Point(162, 68);
             this.idCursoTextBox.Name = "idCursoTextBox";
             this.idCursoTextBox.ReadOnly = true;
-            this.idCursoTextBox.Size = new System.Drawing.Size(525, 20);
+            this.idCursoTextBox.Size = new System.Drawing.Size(508, 20);
             this.idCursoTextBox.TabIndex = 1;
             // 
             // idProfessorTextBox
@@ -377,7 +365,7 @@
             this.idProfessorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "idProfessor", true));
             this.idProfessorTextBox.Location = new System.Drawing.Point(162, 94);
             this.idProfessorTextBox.Name = "idProfessorTextBox";
-            this.idProfessorTextBox.Size = new System.Drawing.Size(525, 20);
+            this.idProfessorTextBox.Size = new System.Drawing.Size(508, 20);
             this.idProfessorTextBox.TabIndex = 3;
             // 
             // tituloTextBox
@@ -385,7 +373,7 @@
             this.tituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Titulo", true));
             this.tituloTextBox.Location = new System.Drawing.Point(162, 120);
             this.tituloTextBox.Name = "tituloTextBox";
-            this.tituloTextBox.Size = new System.Drawing.Size(525, 20);
+            this.tituloTextBox.Size = new System.Drawing.Size(508, 20);
             this.tituloTextBox.TabIndex = 5;
             // 
             // descCursoTextBox
@@ -393,17 +381,8 @@
             this.descCursoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "DescCurso", true));
             this.descCursoTextBox.Location = new System.Drawing.Point(162, 146);
             this.descCursoTextBox.Name = "descCursoTextBox";
-            this.descCursoTextBox.Size = new System.Drawing.Size(525, 20);
+            this.descCursoTextBox.Size = new System.Drawing.Size(508, 20);
             this.descCursoTextBox.TabIndex = 7;
-            // 
-            // comentarioTextBox
-            // 
-            this.comentarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Comentario", true));
-            this.comentarioTextBox.Location = new System.Drawing.Point(162, 172);
-            this.comentarioTextBox.Name = "comentarioTextBox";
-            this.comentarioTextBox.Size = new System.Drawing.Size(525, 20);
-            this.comentarioTextBox.TabIndex = 9;
-            this.comentarioTextBox.Visible = false;
             // 
             // tabPage2
             // 
@@ -414,10 +393,19 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(738, 317);
+            this.tabPage2.Size = new System.Drawing.Size(738, 371);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Comentários";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tituloTextBox1
+            // 
+            this.tituloTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Titulo", true));
+            this.tituloTextBox1.Location = new System.Drawing.Point(154, 47);
+            this.tituloTextBox1.Name = "tituloTextBox1";
+            this.tituloTextBox1.ReadOnly = true;
+            this.tituloTextBox1.Size = new System.Drawing.Size(526, 20);
+            this.tituloTextBox1.TabIndex = 13;
             // 
             // bindingNavigator1
             // 
@@ -558,17 +546,27 @@
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.btLimparImagem);
             this.tabPage3.Controls.Add(this.textBoxImagem);
             this.tabPage3.Controls.Add(this.bindingNavigator2);
             this.tabPage3.Controls.Add(this.pictureBoxImagem);
             this.tabPage3.Controls.Add(this.btAbrirImagem);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(738, 317);
+            this.tabPage3.Size = new System.Drawing.Size(738, 371);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Imagem da Capa";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btLimparImagem
+            // 
+            this.btLimparImagem.Location = new System.Drawing.Point(583, 77);
+            this.btLimparImagem.Name = "btLimparImagem";
+            this.btLimparImagem.Size = new System.Drawing.Size(99, 23);
+            this.btLimparImagem.TabIndex = 19;
+            this.btLimparImagem.Text = "Limpar Imagem";
+            this.btLimparImagem.UseVisualStyleBackColor = true;
+            this.btLimparImagem.Click += new System.EventHandler(this.btLimparImagem_Click);
             // 
             // textBoxImagem
             // 
@@ -748,32 +746,12 @@
             this.tableAdapterManager.ProfessorTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(583, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Limpar Imagem";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // tituloTextBox1
-            // 
-            this.tituloTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "Titulo", true));
-            this.tituloTextBox1.Location = new System.Drawing.Point(154, 47);
-            this.tituloTextBox1.Name = "tituloTextBox1";
-            this.tituloTextBox1.ReadOnly = true;
-            this.tituloTextBox1.Size = new System.Drawing.Size(526, 20);
-            this.tituloTextBox1.TabIndex = 13;
-            // 
             // cadCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btCadastrar);
-            this.Controls.Add(this.btCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -806,9 +784,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.Button btCadastrar;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -834,7 +809,6 @@
         private System.Windows.Forms.TextBox idProfessorTextBox;
         private System.Windows.Forms.TextBox tituloTextBox;
         private System.Windows.Forms.TextBox descCursoTextBox;
-        private System.Windows.Forms.TextBox comentarioTextBox;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
@@ -867,6 +841,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialogImagem;
         private System.Windows.Forms.TextBox textBoxImagem;
         private System.Windows.Forms.TextBox tituloTextBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btLimparImagem;
+        private System.Windows.Forms.Button btCadastrar;
+        private System.Windows.Forms.Button btCancelar;
     }
 }
