@@ -26,6 +26,7 @@ namespace Cursos
                 this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
                 MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.cursoTableAdapter.Fill(this.bDECursosDataSet.Curso);   // Recarrega o formulário
+                this.cursoBindingSource.MoveLast();   // mover para o ultimo cadastro
             }
             catch (Exception ex)
             {
@@ -68,10 +69,29 @@ namespace Cursos
         {
             if (Convert.ToInt32(idCursoTextBox.Text) > 0)
             {
-                if (openFileDialogImagem.ShowDialog() == DialogResult.OK)
+                /*if (openFileDialogImagem.ShowDialog() == DialogResult.OK)
                 {
                     textBoxImagem.Text = openFileDialogImagem.FileName;
                     pictureBoxImagem.ImageLocation = openFileDialogImagem.FileName;
+                } */
+                if (openFileDialogImagem.ShowDialog() == DialogResult.OK)
+                {
+                    Bitmap bmp = new Bitmap(openFileDialogImagem.FileName);   // cria uma classe com a imagem aberta
+                    Bitmap bmp2 = new Bitmap(bmp, pictureBoxImagem.Size);   // cria nova classe com o tamanho do pictureBox
+
+                    pictureBoxImagem.Image = bmp2;   // carrega a imagem no PictureBox
+
+                    // Salva a Imagem da capa na pasta dentro da pasta da aplicação.
+                    // Application.StartupPath -> comando para indicar a pasta onde o programa foi instalado
+                    pictureBoxImagem.Image.Save(Application.StartupPath.ToString() + "\\CapasCursos\\" + idCursoTextBox.Text + ".png", System.Drawing.Imaging.ImageFormat.Png);
+                    
+                    // Salva o caminho no TextBox
+                    textBoxImagem.Text = Application.StartupPath.ToString() + "\\CapasCursos\\" + idCursoTextBox.Text + ".png";
+                    
+                    // Salva o registro
+                    this.Validate();
+                    this.cursoBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
                 }
             }
             else
@@ -88,16 +108,8 @@ namespace Cursos
             MessageBox.Show("Comentário salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void toolStripButton14_Click(object sender, EventArgs e)   // Salvar imagem
-        {
-            this.Validate();
-            this.cursoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-            MessageBox.Show("Imagem salva com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        // carregar imagem do curso no picture box ao mudar o curso caso a imagem já esteja gravada no textBoxImagem
-        private void toolStripButton10_Click(object sender, EventArgs e)
+        // carregar imagem do curso no picture box ao clicar na aba "Imagem da capa" caso a imagem já esteja gravada no textBoxImagem
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (textBoxImagem.Text != "" && textBoxImagem.Text != null)
             {
@@ -105,69 +117,41 @@ namespace Cursos
             }
             else
             {
-                pictureBoxImagem.Image = null;
+                pictureBoxImagem.ImageLocation = Application.StartupPath.ToString() + "\\CapasCursos\\" + "SemCapa.png";
             }
         }
 
-        private void toolStripButton11_Click(object sender, EventArgs e)
+        private void btLimparImagem_Click(object sender, EventArgs e)   // Botão Limpar Imagem da capa
         {
-            if (textBoxImagem.Text != "" && textBoxImagem.Text != null)
+            try
             {
-                pictureBoxImagem.Load(textBoxImagem.Text);
-            }
-            else
-            {
-                pictureBoxImagem.Image = null;
-            }
-        }
+                if (MessageBox.Show("Deseja realmente limpar a imagem?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    pictureBoxImagem.ImageLocation = Application.StartupPath.ToString() + "\\CapasCursos\\" + "SemCapa.png";
 
-        private void toolStripButton12_Click(object sender, EventArgs e)
-        {
-            if (textBoxImagem.Text != "" && textBoxImagem.Text != null)
-            {
-                pictureBoxImagem.Load(textBoxImagem.Text);
-            }
-            else
-            {
-                pictureBoxImagem.Image = null;
-            }
-        }
+                    if (textBoxImagem.Text != "")
+                    {
+                        if (System.IO.File.Exists(textBoxImagem.Text))
+                        {
+                            pictureBoxImagem.Dispose();
+                            System.IO.File.Delete(textBoxImagem.Text);
+                        }
 
-        private void toolStripButton13_Click(object sender, EventArgs e)
-        {
-            if (textBoxImagem.Text != "" && textBoxImagem.Text != null)
-            {
-                pictureBoxImagem.Load(textBoxImagem.Text);
-            }
-            else
-            {
-                pictureBoxImagem.Image = null;
-            }
-        }
+                        textBoxImagem.Text = "";
 
-        private void AbaImagemDaCapa(object sender, EventArgs e)
-        {
-            if (textBoxImagem.Text != "" && textBoxImagem.Text != null)
-            {
-                pictureBoxImagem.Load(textBoxImagem.Text);
+                        // Salva o registro
+                        this.Validate();
+                        this.cursoBindingSource.EndEdit();
+                        this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                pictureBoxImagem.Image = null;
-            }
-        }
-
-        private void btLimparImagem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Deseja realmente limpar a imagem?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                textBoxImagem.Text = null;
-                pictureBoxImagem.Image = null;
-                this.Validate();
-                this.cursoBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+                MessageBox.Show("Erro ao limpar a imagem da capa: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        // ------------------------------------------------------------------------- //
     }
 }
+// verificar erro na exclusão da imagem
+// fazer commit com: Ajusts no tratamento de imagem, colocou a imagem apa ser salvo em uma pasta dentro da pasta do projeto

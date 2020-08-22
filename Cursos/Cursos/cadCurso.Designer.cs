@@ -74,22 +74,9 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage3ImagemCapa = new System.Windows.Forms.TabPage();
             this.btLimparImagem = new System.Windows.Forms.Button();
             this.textBoxImagem = new System.Windows.Forms.TextBox();
-            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.pictureBoxImagem = new System.Windows.Forms.PictureBox();
             this.btAbrirImagem = new System.Windows.Forms.Button();
             this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
@@ -109,9 +96,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
-            this.bindingNavigator2.SuspendLayout();
+            this.tabPage3ImagemCapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,13 +149,13 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage3ImagemCapa);
             this.tabControl1.Location = new System.Drawing.Point(28, 22);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(746, 397);
             this.tabControl1.TabIndex = 2;
-            this.tabControl1.Click += new System.EventHandler(this.AbaImagemDaCapa);
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -543,24 +528,23 @@
             this.textBox1.Size = new System.Drawing.Size(641, 224);
             this.textBox1.TabIndex = 11;
             // 
-            // tabPage3
+            // tabPage3ImagemCapa
             // 
-            this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.btLimparImagem);
-            this.tabPage3.Controls.Add(this.textBoxImagem);
-            this.tabPage3.Controls.Add(this.bindingNavigator2);
-            this.tabPage3.Controls.Add(this.pictureBoxImagem);
-            this.tabPage3.Controls.Add(this.btAbrirImagem);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(738, 371);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Imagem da Capa";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3ImagemCapa.AutoScroll = true;
+            this.tabPage3ImagemCapa.Controls.Add(this.btLimparImagem);
+            this.tabPage3ImagemCapa.Controls.Add(this.textBoxImagem);
+            this.tabPage3ImagemCapa.Controls.Add(this.pictureBoxImagem);
+            this.tabPage3ImagemCapa.Controls.Add(this.btAbrirImagem);
+            this.tabPage3ImagemCapa.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3ImagemCapa.Name = "tabPage3ImagemCapa";
+            this.tabPage3ImagemCapa.Size = new System.Drawing.Size(738, 371);
+            this.tabPage3ImagemCapa.TabIndex = 2;
+            this.tabPage3ImagemCapa.Text = "Imagem da Capa";
+            this.tabPage3ImagemCapa.UseVisualStyleBackColor = true;
             // 
             // btLimparImagem
             // 
-            this.btLimparImagem.Location = new System.Drawing.Point(583, 77);
+            this.btLimparImagem.Location = new System.Drawing.Point(583, 59);
             this.btLimparImagem.Name = "btLimparImagem";
             this.btLimparImagem.Size = new System.Drawing.Size(99, 23);
             this.btLimparImagem.TabIndex = 19;
@@ -571,154 +555,24 @@
             // textBoxImagem
             // 
             this.textBoxImagem.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "ImagemDaCapa", true));
-            this.textBoxImagem.Location = new System.Drawing.Point(40, 50);
+            this.textBoxImagem.Location = new System.Drawing.Point(40, 32);
             this.textBoxImagem.Name = "textBoxImagem";
+            this.textBoxImagem.ReadOnly = true;
             this.textBoxImagem.Size = new System.Drawing.Size(525, 20);
             this.textBoxImagem.TabIndex = 18;
             // 
-            // bindingNavigator2
-            // 
-            this.bindingNavigator2.AddNewItem = this.toolStripButton8;
-            this.bindingNavigator2.BindingSource = this.cursoBindingSource;
-            this.bindingNavigator2.CountItem = this.toolStripLabel2;
-            this.bindingNavigator2.DeleteItem = this.toolStripButton9;
-            this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton10,
-            this.toolStripButton11,
-            this.toolStripSeparator4,
-            this.toolStripTextBox2,
-            this.toolStripLabel2,
-            this.toolStripSeparator5,
-            this.toolStripButton12,
-            this.toolStripButton13,
-            this.toolStripSeparator6,
-            this.toolStripButton8,
-            this.toolStripButton9,
-            this.toolStripButton14});
-            this.bindingNavigator2.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigator2.MoveFirstItem = this.toolStripButton10;
-            this.bindingNavigator2.MoveLastItem = this.toolStripButton13;
-            this.bindingNavigator2.MoveNextItem = this.toolStripButton12;
-            this.bindingNavigator2.MovePreviousItem = this.toolStripButton11;
-            this.bindingNavigator2.Name = "bindingNavigator2";
-            this.bindingNavigator2.PositionItem = this.toolStripTextBox2;
-            this.bindingNavigator2.Size = new System.Drawing.Size(738, 25);
-            this.bindingNavigator2.TabIndex = 16;
-            this.bindingNavigator2.Text = "bindingNavigator1";
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Enabled = false;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton8.Text = "Adicionar novo";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(37, 22);
-            this.toolStripLabel2.Text = "de {0}";
-            this.toolStripLabel2.ToolTipText = "Número total de itens";
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Enabled = false;
-            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton9.Text = "Excluir";
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton10.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton10.Text = "Mover primeiro";
-            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
-            // 
-            // toolStripButton11
-            // 
-            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
-            this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton11.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton11.Text = "Mover anterior";
-            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripTextBox2
-            // 
-            this.toolStripTextBox2.AccessibleName = "Posição";
-            this.toolStripTextBox2.AutoSize = false;
-            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(50, 23);
-            this.toolStripTextBox2.Text = "0";
-            this.toolStripTextBox2.ToolTipText = "Posição atual";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton12.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton12.Text = "Mover próximo";
-            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
-            // 
-            // toolStripButton13
-            // 
-            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
-            this.toolStripButton13.Name = "toolStripButton13";
-            this.toolStripButton13.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton13.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton13.Text = "Mover último";
-            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton14
-            // 
-            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
-            this.toolStripButton14.Name = "toolStripButton14";
-            this.toolStripButton14.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton14.Text = "Salvar Dados";
-            this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);
-            // 
             // pictureBoxImagem
             // 
-            this.pictureBoxImagem.Location = new System.Drawing.Point(40, 76);
+            this.pictureBoxImagem.Location = new System.Drawing.Point(102, 78);
             this.pictureBoxImagem.Name = "pictureBoxImagem";
-            this.pictureBoxImagem.Size = new System.Drawing.Size(525, 225);
+            this.pictureBoxImagem.Size = new System.Drawing.Size(389, 250);
             this.pictureBoxImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxImagem.TabIndex = 15;
             this.pictureBoxImagem.TabStop = false;
             // 
             // btAbrirImagem
             // 
-            this.btAbrirImagem.Location = new System.Drawing.Point(583, 48);
+            this.btAbrirImagem.Location = new System.Drawing.Point(583, 30);
             this.btAbrirImagem.Name = "btAbrirImagem";
             this.btAbrirImagem.Size = new System.Drawing.Size(99, 23);
             this.btAbrirImagem.TabIndex = 14;
@@ -773,11 +627,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
-            this.bindingNavigator2.ResumeLayout(false);
-            this.bindingNavigator2.PerformLayout();
+            this.tabPage3ImagemCapa.ResumeLayout(false);
+            this.tabPage3ImagemCapa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).EndInit();
             this.ResumeLayout(false);
 
@@ -787,7 +638,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage3ImagemCapa;
         private BDECursosDataSet bDECursosDataSet;
         private System.Windows.Forms.BindingSource cursoBindingSource;
         private BDECursosDataSetTableAdapters.CursoTableAdapter cursoTableAdapter;
@@ -823,19 +674,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.BindingNavigator bindingNavigator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
-        private System.Windows.Forms.ToolStripButton toolStripButton10;
-        private System.Windows.Forms.ToolStripButton toolStripButton11;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripButton toolStripButton12;
-        private System.Windows.Forms.ToolStripButton toolStripButton13;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton toolStripButton14;
         private System.Windows.Forms.PictureBox pictureBoxImagem;
         private System.Windows.Forms.Button btAbrirImagem;
         private System.Windows.Forms.OpenFileDialog openFileDialogImagem;

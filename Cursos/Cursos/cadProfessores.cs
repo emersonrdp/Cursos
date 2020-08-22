@@ -40,6 +40,7 @@ namespace Cursos
                 this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
                 MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.professorTableAdapter.Fill(this.bDECursosDataSet.Professor);   // Recarrega o formulario
+                this.professorBindingSource.MoveLast();   // mover para o ultimo cadastro
             }
             catch (Exception ex)
             {

@@ -35,6 +35,7 @@ namespace Cursos
                 this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
                 MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.clienteTableAdapter.Fill(this.bDECursosDataSet.Cliente);   // Recarrega o formulário
+                this.clienteBindingSource.MoveLast();   // mover para o ultimo cadastro
             }
             catch (Exception ex)
             {
