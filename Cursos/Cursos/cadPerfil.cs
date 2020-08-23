@@ -39,7 +39,7 @@ namespace Cursos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falha ao salvar o registro: " + ex.Message, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Falha ao salvar o registro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -70,7 +70,7 @@ namespace Cursos
             else
             {
                 this.perfilTableAdapter.Fill(this.bDECursosDataSet.Perfil);   // Recarrega o formulario
-                MessageBox.Show("Operação abortada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Operação abortada.", "Abortada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

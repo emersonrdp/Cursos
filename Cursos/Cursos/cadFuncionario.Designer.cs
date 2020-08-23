@@ -38,10 +38,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadFuncionario));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.funcionarioBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.confirmeSenhaTextBox = new System.Windows.Forms.TextBox();
+            this.comboBoxIdPerfil = new System.Windows.Forms.ComboBox();
             this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bDECursosDataSet = new Cursos.BDECursosDataSet();
+            this.perfilBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.funcionarioBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -53,12 +57,13 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.funcionarioBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.btCadastrar = new System.Windows.Forms.Button();
+            this.btCancelar = new System.Windows.Forms.Button();
             this.idFuncionarioTextBox = new System.Windows.Forms.TextBox();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.loginTextBox = new System.Windows.Forms.TextBox();
             this.senhaTextBox = new System.Windows.Forms.TextBox();
             this.situacaoCheckBox = new System.Windows.Forms.CheckBox();
-            this.idPerfilTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.funcionarioDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,10 +73,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxPesquisaFuncionario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btCadastrar = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
             this.funcionarioTableAdapter = new Cursos.BDECursosDataSetTableAdapters.FuncionarioTableAdapter();
             this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
+            this.perfilTableAdapter = new Cursos.BDECursosDataSetTableAdapters.PerfilTableAdapter();
             idFuncionarioLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
             loginLabel = new System.Windows.Forms.Label();
@@ -80,10 +84,11 @@
             idPerfilLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingNavigator)).BeginInit();
-            this.funcionarioBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.perfilBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingNavigator)).BeginInit();
+            this.funcionarioBindingNavigator.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
@@ -131,7 +136,7 @@
             situacaoLabel.Location = new System.Drawing.Point(48, 173);
             situacaoLabel.Name = "situacaoLabel";
             situacaoLabel.Size = new System.Drawing.Size(52, 13);
-            situacaoLabel.TabIndex = 8;
+            situacaoLabel.TabIndex = 18;
             situacaoLabel.Text = "Situacao:";
             // 
             // idPerfilLabel
@@ -155,6 +160,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.confirmeSenhaTextBox);
+            this.tabPage1.Controls.Add(this.comboBoxIdPerfil);
             this.tabPage1.Controls.Add(this.funcionarioBindingNavigator);
             this.tabPage1.Controls.Add(this.btCadastrar);
             this.tabPage1.Controls.Add(this.btCancelar);
@@ -169,7 +177,6 @@
             this.tabPage1.Controls.Add(situacaoLabel);
             this.tabPage1.Controls.Add(this.situacaoCheckBox);
             this.tabPage1.Controls.Add(idPerfilLabel);
-            this.tabPage1.Controls.Add(this.idPerfilTextBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -177,6 +184,50 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(374, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Confirme";
+            // 
+            // confirmeSenhaTextBox
+            // 
+            this.confirmeSenhaTextBox.Location = new System.Drawing.Point(426, 142);
+            this.confirmeSenhaTextBox.Name = "confirmeSenhaTextBox";
+            this.confirmeSenhaTextBox.Size = new System.Drawing.Size(246, 20);
+            this.confirmeSenhaTextBox.TabIndex = 8;
+            this.confirmeSenhaTextBox.UseSystemPasswordChar = true;
+            // 
+            // comboBoxIdPerfil
+            // 
+            this.comboBoxIdPerfil.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.funcionarioBindingSource, "idPerfil", true));
+            this.comboBoxIdPerfil.DataSource = this.perfilBindingSource;
+            this.comboBoxIdPerfil.DisplayMember = "Nome";
+            this.comboBoxIdPerfil.FormattingEnabled = true;
+            this.comboBoxIdPerfil.Location = new System.Drawing.Point(106, 198);
+            this.comboBoxIdPerfil.Name = "comboBoxIdPerfil";
+            this.comboBoxIdPerfil.Size = new System.Drawing.Size(566, 21);
+            this.comboBoxIdPerfil.TabIndex = 11;
+            this.comboBoxIdPerfil.ValueMember = "idPerfil";
+            // 
+            // funcionarioBindingSource
+            // 
+            this.funcionarioBindingSource.DataMember = "Funcionario";
+            this.funcionarioBindingSource.DataSource = this.bDECursosDataSet;
+            // 
+            // bDECursosDataSet
+            // 
+            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
+            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // perfilBindingSource
+            // 
+            this.perfilBindingSource.DataMember = "Perfil";
+            this.perfilBindingSource.DataSource = this.bDECursosDataSet;
             // 
             // funcionarioBindingNavigator
             // 
@@ -216,16 +267,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
-            // 
-            // funcionarioBindingSource
-            // 
-            this.funcionarioBindingSource.DataMember = "Funcionario";
-            this.funcionarioBindingSource.DataSource = this.bDECursosDataSet;
-            // 
-            // bDECursosDataSet
-            // 
-            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
-            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -314,6 +355,28 @@
             this.funcionarioBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.funcionarioBindingNavigatorSaveItem.Click += new System.EventHandler(this.funcionarioBindingNavigatorSaveItem_Click);
             // 
+            // btCadastrar
+            // 
+            this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCadastrar.Location = new System.Drawing.Point(566, 314);
+            this.btCadastrar.Name = "btCadastrar";
+            this.btCadastrar.Size = new System.Drawing.Size(106, 35);
+            this.btCadastrar.TabIndex = 13;
+            this.btCadastrar.Text = "Cadastrar";
+            this.btCadastrar.UseVisualStyleBackColor = true;
+            this.btCadastrar.Click += new System.EventHandler(this.funcionarioBindingNavigatorSaveItem_Click);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(441, 314);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(106, 35);
+            this.btCancelar.TabIndex = 12;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
             // idFuncionarioTextBox
             // 
             this.idFuncionarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.funcionarioBindingSource, "idFuncionario", true));
@@ -344,8 +407,9 @@
             this.senhaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.funcionarioBindingSource, "Senha", true));
             this.senhaTextBox.Location = new System.Drawing.Point(106, 142);
             this.senhaTextBox.Name = "senhaTextBox";
-            this.senhaTextBox.Size = new System.Drawing.Size(566, 20);
+            this.senhaTextBox.Size = new System.Drawing.Size(246, 20);
             this.senhaTextBox.TabIndex = 7;
+            this.senhaTextBox.UseSystemPasswordChar = true;
             // 
             // situacaoCheckBox
             // 
@@ -354,16 +418,8 @@
             this.situacaoCheckBox.Name = "situacaoCheckBox";
             this.situacaoCheckBox.Size = new System.Drawing.Size(566, 24);
             this.situacaoCheckBox.TabIndex = 9;
-            this.situacaoCheckBox.Text = "Sim / Não";
+            this.situacaoCheckBox.Text = "Ativo / Inativo";
             this.situacaoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // idPerfilTextBox
-            // 
-            this.idPerfilTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.funcionarioBindingSource, "idPerfil", true));
-            this.idPerfilTextBox.Location = new System.Drawing.Point(106, 198);
-            this.idPerfilTextBox.Name = "idPerfilTextBox";
-            this.idPerfilTextBox.Size = new System.Drawing.Size(566, 20);
-            this.idPerfilTextBox.TabIndex = 11;
             // 
             // tabPage2
             // 
@@ -448,28 +504,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Informe o nome do funcionario";
             // 
-            // btCadastrar
-            // 
-            this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(566, 314);
-            this.btCadastrar.Name = "btCadastrar";
-            this.btCadastrar.Size = new System.Drawing.Size(106, 35);
-            this.btCadastrar.TabIndex = 10;
-            this.btCadastrar.Text = "Cadastrar";
-            this.btCadastrar.UseVisualStyleBackColor = true;
-            this.btCadastrar.Click += new System.EventHandler(this.funcionarioBindingNavigatorSaveItem_Click);
-            // 
-            // btCancelar
-            // 
-            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(441, 314);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(106, 35);
-            this.btCancelar.TabIndex = 9;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
             // funcionarioTableAdapter
             // 
             this.funcionarioTableAdapter.ClearBeforeFill = true;
@@ -485,6 +519,10 @@
             this.tableAdapterManager.PerfilTableAdapter = null;
             this.tableAdapterManager.ProfessorTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // perfilTableAdapter
+            // 
+            this.perfilTableAdapter.ClearBeforeFill = true;
             // 
             // cadFuncionario
             // 
@@ -503,11 +541,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.perfilBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingNavigator)).EndInit();
             this.funcionarioBindingNavigator.ResumeLayout(false);
             this.funcionarioBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioDataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -545,7 +584,6 @@
         private System.Windows.Forms.TextBox loginTextBox;
         private System.Windows.Forms.TextBox senhaTextBox;
         private System.Windows.Forms.CheckBox situacaoCheckBox;
-        private System.Windows.Forms.TextBox idPerfilTextBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxPesquisaFuncionario;
         private System.Windows.Forms.Label label1;
@@ -554,5 +592,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.ComboBox comboBoxIdPerfil;
+        private System.Windows.Forms.BindingSource perfilBindingSource;
+        private BDECursosDataSetTableAdapters.PerfilTableAdapter perfilTableAdapter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox confirmeSenhaTextBox;
     }
 }

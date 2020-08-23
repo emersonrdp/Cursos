@@ -30,12 +30,14 @@ namespace Cursos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falha ao salvar o registro: " + ex.Message, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Falha ao salvar o registro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void cadCurso_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'bDECursosDataSet.Professor'. Você pode movê-la ou removê-la conforme necessário.
+            this.professorTableAdapter.Fill(this.bDECursosDataSet.Professor);
             // TODO: esta linha de código carrega dados na tabela 'bDECursosDataSet.Curso'. Você pode movê-la ou removê-la conforme necessário.
             this.cursoTableAdapter.Fill(this.bDECursosDataSet.Curso);
 
@@ -61,7 +63,7 @@ namespace Cursos
             else
             {
                 this.cursoTableAdapter.Fill(this.bDECursosDataSet.Curso);   // Recarrega o formulario
-                MessageBox.Show("Operação abortada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Operação abortada.", "Abortada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -69,11 +71,6 @@ namespace Cursos
         {
             if (Convert.ToInt32(idCursoTextBox.Text) > 0)
             {
-                /*if (openFileDialogImagem.ShowDialog() == DialogResult.OK)
-                {
-                    textBoxImagem.Text = openFileDialogImagem.FileName;
-                    pictureBoxImagem.ImageLocation = openFileDialogImagem.FileName;
-                } */
                 if (openFileDialogImagem.ShowDialog() == DialogResult.OK)
                 {
                     Bitmap bmp = new Bitmap(openFileDialogImagem.FileName);   // cria uma classe com a imagem aberta
@@ -133,7 +130,7 @@ namespace Cursos
                     {
                         if (System.IO.File.Exists(textBoxImagem.Text))
                         {
-                            pictureBoxImagem.Dispose();
+                            pictureBoxImagem.Dispose();   // limpar a imagem para não dar erro informando qu ela está em uso
                             System.IO.File.Delete(textBoxImagem.Text);
                         }
 
@@ -153,5 +150,3 @@ namespace Cursos
         }
     }
 }
-// verificar erro na exclusão da imagem
-// fazer commit com: Ajusts no tratamento de imagem, colocou a imagem apa ser salvo em uma pasta dentro da pasta do projeto

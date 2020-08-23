@@ -71,6 +71,8 @@
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.saveFileDialogBackup = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialogRestore = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -152,28 +154,28 @@
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
             // professoresToolStripMenuItem1
             // 
             this.professoresToolStripMenuItem1.Name = "professoresToolStripMenuItem1";
-            this.professoresToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.professoresToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.professoresToolStripMenuItem1.Text = "Professores";
             this.professoresToolStripMenuItem1.Click += new System.EventHandler(this.professoresToolStripMenuItem1_Click);
             // 
             // funcionáriosToolStripMenuItem1
             // 
             this.funcionáriosToolStripMenuItem1.Name = "funcionáriosToolStripMenuItem1";
-            this.funcionáriosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.funcionáriosToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.funcionáriosToolStripMenuItem1.Text = "Funcionários";
             this.funcionáriosToolStripMenuItem1.Click += new System.EventHandler(this.funcionáriosToolStripMenuItem1_Click);
             // 
             // perfilToolStripMenuItem1
             // 
             this.perfilToolStripMenuItem1.Name = "perfilToolStripMenuItem1";
-            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.perfilToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.perfilToolStripMenuItem1.Text = "Perfil";
             this.perfilToolStripMenuItem1.Click += new System.EventHandler(this.perfilToolStripMenuItem1_Click);
             // 
@@ -313,6 +315,7 @@
             this.toolStripButton1.Size = new System.Drawing.Size(68, 68);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.ToolTipText = "Fazer Backup";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -323,6 +326,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(68, 68);
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.ToolTipText = "Restaurar Backup";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripSeparator1
             // 
@@ -427,6 +431,17 @@
             this.toolTip1.IsBalloon = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
+            // saveFileDialogBackup
+            // 
+            this.saveFileDialogBackup.DefaultExt = "bkCurso";
+            this.saveFileDialogBackup.Filter = "\"Backup E-Cursos (*.bkCurso)|*.bkCurso|Todos os arquivos (*.*)|*.*\"";
+            // 
+            // openFileDialogRestore
+            // 
+            this.openFileDialogRestore.DefaultExt = "bkCurso";
+            this.openFileDialogRestore.FileName = "openFileDialog1";
+            this.openFileDialogRestore.Filter = "\"Backup E-Cursos (*.bkCurso)|*.bkCurso|Todos os arquivos (*.*)|*.*\"";
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,5 +510,7 @@
         private System.Windows.Forms.ToolStripMenuItem wordToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripMenuItem perfilToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogBackup;
+        private System.Windows.Forms.OpenFileDialog openFileDialogRestore;
     }
 }

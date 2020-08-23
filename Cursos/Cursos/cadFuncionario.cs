@@ -30,21 +30,31 @@ namespace Cursos
         {
             try
             {
-                this.Validate();
-                this.funcionarioBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-                MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.funcionarioTableAdapter.Fill(this.bDECursosDataSet.Funcionario);   // Recarrega o formulario
-                this.funcionarioBindingSource.MoveLast();   // mover para o ultimo cadastro
+                if (senhaTextBox.Text == confirmeSenhaTextBox.Text)
+                {
+                    this.Validate();
+                    this.funcionarioBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+                    MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.funcionarioTableAdapter.Fill(this.bDECursosDataSet.Funcionario);   // Recarrega o formulario
+                    confirmeSenhaTextBox.Text = "";   // Limpar o campode confirmação da senha
+                    this.funcionarioBindingSource.MoveLast();   // mover para o ultimo cadastro
+                }
+                else
+                {
+                    MessageBox.Show("As senhas não são iguais. Informe a senha novamente.", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Falha ao salvar o registro: " + ex.Message, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Falha ao salvar o registro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void cadFuncionario_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'bDECursosDataSet.Perfil'. Você pode movê-la ou removê-la conforme necessário.
+            this.perfilTableAdapter.Fill(this.bDECursosDataSet.Perfil);
             // TODO: esta linha de código carrega dados na tabela 'bDECursosDataSet.Funcionario'. Você pode movê-la ou removê-la conforme necessário.
             this.funcionarioTableAdapter.Fill(this.bDECursosDataSet.Funcionario);
 
@@ -70,7 +80,7 @@ namespace Cursos
             else
             {
                 this.funcionarioTableAdapter.Fill(this.bDECursosDataSet.Funcionario);   // Recarrega o formulario
-                MessageBox.Show("Operação abortada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Operação abortada.", "Abortada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

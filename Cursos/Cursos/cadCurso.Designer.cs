@@ -55,7 +55,6 @@
             this.btCadastrar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.idCursoTextBox = new System.Windows.Forms.TextBox();
-            this.idProfessorTextBox = new System.Windows.Forms.TextBox();
             this.tituloTextBox = new System.Windows.Forms.TextBox();
             this.descCursoTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -82,6 +81,9 @@
             this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
             this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
             this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
+            this.comboBoxIdProfessor = new System.Windows.Forms.ComboBox();
+            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.professorTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ProfessorTableAdapter();
             descCursoLabel = new System.Windows.Forms.Label();
             tituloLabel = new System.Windows.Forms.Label();
             idProfessorLabel = new System.Windows.Forms.Label();
@@ -98,6 +100,7 @@
             this.bindingNavigator1.SuspendLayout();
             this.tabPage3ImagemCapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // descCursoLabel
@@ -159,13 +162,13 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.comboBoxIdProfessor);
             this.tabPage1.Controls.Add(this.cursoBindingNavigator);
             this.tabPage1.Controls.Add(this.btCadastrar);
             this.tabPage1.Controls.Add(idCursoLabel);
             this.tabPage1.Controls.Add(this.btCancelar);
             this.tabPage1.Controls.Add(this.idCursoTextBox);
             this.tabPage1.Controls.Add(idProfessorLabel);
-            this.tabPage1.Controls.Add(this.idProfessorTextBox);
             this.tabPage1.Controls.Add(tituloLabel);
             this.tabPage1.Controls.Add(this.tituloTextBox);
             this.tabPage1.Controls.Add(descCursoLabel);
@@ -344,14 +347,6 @@
             this.idCursoTextBox.ReadOnly = true;
             this.idCursoTextBox.Size = new System.Drawing.Size(508, 20);
             this.idCursoTextBox.TabIndex = 1;
-            // 
-            // idProfessorTextBox
-            // 
-            this.idProfessorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cursoBindingSource, "idProfessor", true));
-            this.idProfessorTextBox.Location = new System.Drawing.Point(162, 94);
-            this.idProfessorTextBox.Name = "idProfessorTextBox";
-            this.idProfessorTextBox.Size = new System.Drawing.Size(508, 20);
-            this.idProfessorTextBox.TabIndex = 3;
             // 
             // tituloTextBox
             // 
@@ -600,6 +595,27 @@
             this.tableAdapterManager.ProfessorTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // comboBoxIdProfessor
+            // 
+            this.comboBoxIdProfessor.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cursoBindingSource, "idProfessor", true));
+            this.comboBoxIdProfessor.DataSource = this.professorBindingSource;
+            this.comboBoxIdProfessor.DisplayMember = "Nome";
+            this.comboBoxIdProfessor.FormattingEnabled = true;
+            this.comboBoxIdProfessor.Location = new System.Drawing.Point(162, 93);
+            this.comboBoxIdProfessor.Name = "comboBoxIdProfessor";
+            this.comboBoxIdProfessor.Size = new System.Drawing.Size(508, 21);
+            this.comboBoxIdProfessor.TabIndex = 11;
+            this.comboBoxIdProfessor.ValueMember = "idProfessor";
+            // 
+            // professorBindingSource
+            // 
+            this.professorBindingSource.DataMember = "Professor";
+            this.professorBindingSource.DataSource = this.bDECursosDataSet;
+            // 
+            // professorTableAdapter
+            // 
+            this.professorTableAdapter.ClearBeforeFill = true;
+            // 
             // cadCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,6 +646,7 @@
             this.tabPage3ImagemCapa.ResumeLayout(false);
             this.tabPage3ImagemCapa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -657,7 +674,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton cursoBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox idCursoTextBox;
-        private System.Windows.Forms.TextBox idProfessorTextBox;
         private System.Windows.Forms.TextBox tituloTextBox;
         private System.Windows.Forms.TextBox descCursoTextBox;
         private System.Windows.Forms.TextBox textBox1;
@@ -682,5 +698,8 @@
         private System.Windows.Forms.Button btLimparImagem;
         private System.Windows.Forms.Button btCadastrar;
         private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.ComboBox comboBoxIdProfessor;
+        private System.Windows.Forms.BindingSource professorBindingSource;
+        private BDECursosDataSetTableAdapters.ProfessorTableAdapter professorTableAdapter;
     }
 }

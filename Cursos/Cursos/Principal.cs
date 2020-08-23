@@ -112,5 +112,53 @@ namespace Cursos
             cadPerfil frmPerfil2 = new cadPerfil(TipoTab.Consulta);
             frmPerfil2.Show();
         }
+
+        // Backup do banco de dados
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialogBackup.ShowDialog() == DialogResult.OK)
+            {
+                if (System.IO.File.Exists(saveFileDialogBackup.FileName))
+                {
+                    System.IO.File.Delete(saveFileDialogBackup.FileName);
+                }
+
+                System.IO.File.Copy(Application.StartupPath.ToString() + "\\BD-ECursos.accdb", saveFileDialogBackup.FileName);
+                MessageBox.Show("Backup realizado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Operação abortada.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        // Restauração do backup do banco de dados
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (openFileDialogRestore.ShowDialog() == DialogResult.OK)
+            {
+                if (MessageBox.Show("Deseja realmente restaurar o backup?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (System.IO.File.Exists(Application.StartupPath.ToString() + "\\BD-ECursos.accdb"))
+                    {
+                        System.IO.File.Delete(Application.StartupPath.ToString() + "\\BD-ECursos.accdb");
+                    }
+
+                    System.IO.File.Copy(openFileDialogRestore.FileName, Application.StartupPath.ToString() + "\\BD-ECursos.accdb");
+                    MessageBox.Show("Backup restaurado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Restauração de backup cancelada!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Operação abortada.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 } 
+
+// implmentar para não mostrar o codigo do cadastro, so mostrar após salvar (para não ficar mostrando numero negativo)
+//          ao clicar em novo não mostra e ao clicar em salvar mostra
