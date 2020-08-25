@@ -44,44 +44,44 @@ namespace Cursos
         }
 
         // BOTÃO SAIR
-        private void toolStripButton5_Click(object sender, EventArgs e)   // botão sair
+        private void toolStripButton5_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
         // MENU SAIR
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)   // menu sair
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
         // MENU CADASTROS
        
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)   // Clientes
         {
             cadCliente frmCliente = new cadCliente(TipoTab.Cadastro);
             frmCliente.Show();
         }
 
-        private void professoresToolStripMenuItem_Click(object sender, EventArgs e)
+        private void professoresToolStripMenuItem_Click(object sender, EventArgs e)   // Professores
         {
             cadProfessores frmProfessores = new cadProfessores(TipoTab.Cadastro);
             frmProfessores.Show();
         }
 
-        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)   // Funcionários
         {
             cadFuncionario frmFuncionario = new cadFuncionario(TipoTab.Cadastro);
             frmFuncionario.Show();
         }
 
-        private void perfilToolStripMenuItem_Click(object sender, EventArgs e)
+        private void perfilToolStripMenuItem_Click(object sender, EventArgs e)   // Perfil
         {
             cadPerfil frmPerfil = new cadPerfil(TipoTab.Cadastro);
             frmPerfil.Show();
         }
 
-        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)   // Curso
         {
             cadCurso frmCurso = new cadCurso();
             frmCurso.Show();
@@ -113,6 +113,8 @@ namespace Cursos
             frmPerfil2.Show();
         }
 
+        // BOTÕES DO TOPO DA TELA   
+        
         // Backup do banco de dados
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -156,6 +158,19 @@ namespace Cursos
             {
                 MessageBox.Show("Operação abortada.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        // LOCAÇÃO  
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            cadLocacao frmLocacao = new cadLocacao();
+            frmLocacao.Show();
+        }
+
+        // DEVOLUÇÃO
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 } 

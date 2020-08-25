@@ -57,22 +57,22 @@
             this.toolStripStatusHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.saveFileDialogBackup = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialogRestore = new System.Windows.Forms.OpenFileDialog();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonCadFuncionarios = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCadClintes = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.saveFileDialogBackup = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialogRestore = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -306,6 +306,37 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 71);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 71);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 71);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // saveFileDialogBackup
+            // 
+            this.saveFileDialogBackup.DefaultExt = "bkCurso";
+            this.saveFileDialogBackup.Filter = "\"Backup E-Cursos (*.bkCurso)|*.bkCurso|Todos os arquivos (*.*)|*.*\"";
+            // 
+            // openFileDialogRestore
+            // 
+            this.openFileDialogRestore.DefaultExt = "bkCurso";
+            this.openFileDialogRestore.FileName = "openFileDialog1";
+            this.openFileDialogRestore.Filter = "\"Backup E-Cursos (*.bkCurso)|*.bkCurso|Todos os arquivos (*.*)|*.*\"";
+            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -328,11 +359,6 @@
             this.toolStripButton2.ToolTipText = "Restaurar Backup";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 71);
-            // 
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -352,11 +378,6 @@
             this.toolStripButton4.Size = new System.Drawing.Size(68, 68);
             this.toolStripButton4.Text = "toolStripButton4";
             this.toolStripButton4.ToolTipText = "Pesquisar";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 71);
             // 
             // toolStripButtonCadFuncionarios
             // 
@@ -389,6 +410,7 @@
             this.toolStripButton7.Size = new System.Drawing.Size(68, 68);
             this.toolStripButton7.Text = "toolStripButton7";
             this.toolStripButton7.ToolTipText = "Locação";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // toolStripButton8
             // 
@@ -399,11 +421,7 @@
             this.toolStripButton8.Size = new System.Drawing.Size(68, 68);
             this.toolStripButton8.Text = "toolStripButton8";
             this.toolStripButton8.ToolTipText = "Devolução";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 71);
+            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
             // toolStripButton9
             // 
@@ -425,22 +443,6 @@
             this.toolStripButton5.Text = "toolStripButton5";
             this.toolStripButton5.ToolTipText = "Sair do Programa";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            // 
-            // saveFileDialogBackup
-            // 
-            this.saveFileDialogBackup.DefaultExt = "bkCurso";
-            this.saveFileDialogBackup.Filter = "\"Backup E-Cursos (*.bkCurso)|*.bkCurso|Todos os arquivos (*.*)|*.*\"";
-            // 
-            // openFileDialogRestore
-            // 
-            this.openFileDialogRestore.DefaultExt = "bkCurso";
-            this.openFileDialogRestore.FileName = "openFileDialog1";
-            this.openFileDialogRestore.Filter = "\"Backup E-Cursos (*.bkCurso)|*.bkCurso|Todos os arquivos (*.*)|*.*\"";
             // 
             // Principal
             // 

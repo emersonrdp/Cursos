@@ -72,6 +72,12 @@
     <Compile Include="cadFuncionario.Designer.cs">
       <DependentUpon>cadFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="cadLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadLocacao.Designer.cs">
+      <DependentUpon>cadLocacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="cadPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     <EmbeddedResource Include="cadFuncionario.resx">
       <DependentUpon>cadFuncionario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="cadLocacao.resx">
+      <DependentUpon>cadLocacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cadPerfil.resx">
       <DependentUpon>cadPerfil.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,13 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="BDECursosDataSet.xsc">
       <DependentUpon>BDECursosDataSet.xsd</DependentUpon>
     </None>
@@ -152,6 +157,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -165,6 +175,10 @@
     <Content Include="BD-ECursos.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\add.png" />
+    <None Include="Resources\add.jpg" />
+    <None Include="Resources\del.jpg" />
+    <None Include="Resources\delete.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="pictureBoxImagem\" />
