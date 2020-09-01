@@ -38,34 +38,39 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.bDECursosDataSet = new Cursos.BDECursosDataSet();
-            this.itemLocacaoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ItemLocacaoTableAdapter();
             this.itemLocacaoDataGridView = new System.Windows.Forms.DataGridView();
+            this.Devolver = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bDECursosDataSet = new Cursos.BDECursosDataSet();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemLocacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.itemLocacaoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.itemLocacaoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.itemLocacaoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.btDevolvr = new System.Windows.Forms.Button();
+            this.btDevolver = new System.Windows.Forms.Button();
+            this.itemLocacaoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ItemLocacaoTableAdapter();
             this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ClienteTableAdapter();
+            this.btCancelar = new System.Windows.Forms.Button();
+            this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoBindingNavigator)).BeginInit();
             this.itemLocacaoBindingNavigator.SuspendLayout();
@@ -91,12 +96,13 @@
             // bt_PesquisaCliente
             // 
             this.bt_PesquisaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_PesquisaCliente.Image = ((System.Drawing.Image)(resources.GetObject("bt_PesquisaCliente.Image")));
             this.bt_PesquisaCliente.Location = new System.Drawing.Point(410, 36);
             this.bt_PesquisaCliente.Name = "bt_PesquisaCliente";
             this.bt_PesquisaCliente.Size = new System.Drawing.Size(31, 21);
             this.bt_PesquisaCliente.TabIndex = 6;
-            this.bt_PesquisaCliente.Text = "...";
             this.bt_PesquisaCliente.UseVisualStyleBackColor = true;
+            this.bt_PesquisaCliente.Click += new System.EventHandler(this.bt_PesquisaCliente_Click);
             // 
             // dateTimePickerDataDevolucao
             // 
@@ -148,76 +154,77 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Código:";
             // 
-            // bDECursosDataSet
-            // 
-            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
-            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // itemLocacaoTableAdapter
-            // 
-            this.itemLocacaoTableAdapter.ClearBeforeFill = true;
-            // 
             // itemLocacaoDataGridView
             // 
             this.itemLocacaoDataGridView.AutoGenerateColumns = false;
             this.itemLocacaoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.itemLocacaoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Devolver,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.itemLocacaoDataGridView.DataSource = this.itemLocacaoBindingSource;
             this.itemLocacaoDataGridView.Location = new System.Drawing.Point(12, 160);
+            this.itemLocacaoDataGridView.MultiSelect = false;
             this.itemLocacaoDataGridView.Name = "itemLocacaoDataGridView";
+            this.itemLocacaoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.itemLocacaoDataGridView.Size = new System.Drawing.Size(610, 286);
             this.itemLocacaoDataGridView.TabIndex = 2;
+            // 
+            // Devolver
+            // 
+            this.Devolver.HeaderText = "Devolver";
+            this.Devolver.Name = "Devolver";
+            this.Devolver.Width = 60;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "idItem";
             this.dataGridViewTextBoxColumn1.HeaderText = "idItem";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "idLocacao";
             this.dataGridViewTextBoxColumn2.HeaderText = "idLocacao";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "idCurso";
-            this.dataGridViewTextBoxColumn3.HeaderText = "idCurso";
+            this.dataGridViewTextBoxColumn3.DataSource = this.cursoBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "Titulo";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Curso";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "idCurso";
+            this.dataGridViewTextBoxColumn3.Width = 505;
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataMember = "Curso";
+            this.cursoBindingSource.DataSource = this.bDECursosDataSet;
+            // 
+            // bDECursosDataSet
+            // 
+            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
+            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "DataDevolucao";
             this.dataGridViewTextBoxColumn4.HeaderText = "DataDevolucao";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // itemLocacaoBindingSource
             // 
             this.itemLocacaoBindingSource.DataMember = "ItemLocacao";
             this.itemLocacaoBindingSource.DataSource = this.bDECursosDataSet;
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
@@ -246,55 +253,10 @@
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Excluir";
-            // 
-            // itemLocacaoBindingNavigatorSaveItem
-            // 
-            this.itemLocacaoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.itemLocacaoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("itemLocacaoBindingNavigatorSaveItem.Image")));
-            this.itemLocacaoBindingNavigatorSaveItem.Name = "itemLocacaoBindingNavigatorSaveItem";
-            this.itemLocacaoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.itemLocacaoBindingNavigatorSaveItem.Text = "Salvar Dados";
-            this.itemLocacaoBindingNavigatorSaveItem.Click += new System.EventHandler(this.itemLocacaoBindingNavigatorSaveItem_Click);
             // 
             // itemLocacaoBindingNavigator
             // 
@@ -327,15 +289,83 @@
             this.itemLocacaoBindingNavigator.Text = "bindingNavigator1";
             this.itemLocacaoBindingNavigator.Visible = false;
             // 
-            // btDevolvr
+            // bindingNavigatorAddNewItem
             // 
-            this.btDevolvr.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDevolvr.Location = new System.Drawing.Point(497, 35);
-            this.btDevolvr.Name = "btDevolvr";
-            this.btDevolvr.Size = new System.Drawing.Size(105, 35);
-            this.btDevolvr.TabIndex = 5;
-            this.btDevolvr.Text = "Devolver";
-            this.btDevolvr.UseVisualStyleBackColor = true;
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Excluir";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // itemLocacaoBindingNavigatorSaveItem
+            // 
+            this.itemLocacaoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.itemLocacaoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("itemLocacaoBindingNavigatorSaveItem.Image")));
+            this.itemLocacaoBindingNavigatorSaveItem.Name = "itemLocacaoBindingNavigatorSaveItem";
+            this.itemLocacaoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.itemLocacaoBindingNavigatorSaveItem.Text = "Salvar Dados";
+            this.itemLocacaoBindingNavigatorSaveItem.Click += new System.EventHandler(this.itemLocacaoBindingNavigatorSaveItem_Click);
+            // 
+            // btDevolver
+            // 
+            this.btDevolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDevolver.Location = new System.Drawing.Point(497, 37);
+            this.btDevolver.Name = "btDevolver";
+            this.btDevolver.Size = new System.Drawing.Size(105, 35);
+            this.btDevolver.TabIndex = 5;
+            this.btDevolver.Text = "Devolver";
+            this.btDevolver.UseVisualStyleBackColor = true;
+            this.btDevolver.Click += new System.EventHandler(this.btDevolver_Click);
+            // 
+            // itemLocacaoTableAdapter
+            // 
+            this.itemLocacaoTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -359,16 +389,33 @@
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
             // 
+            // btCancelar
+            // 
+            this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCancelar.Location = new System.Drawing.Point(497, 80);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(106, 35);
+            this.btCancelar.TabIndex = 6;
+            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
+            // cursoTableAdapter
+            // 
+            this.cursoTableAdapter.ClearBeforeFill = true;
+            // 
             // cadDevolucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 458);
-            this.Controls.Add(this.btDevolvr);
+            this.Controls.Add(this.btCancelar);
+            this.Controls.Add(this.btDevolver);
             this.Controls.Add(this.itemLocacaoDataGridView);
             this.Controls.Add(this.itemLocacaoBindingNavigator);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "cadDevolucao";
@@ -377,8 +424,9 @@
             this.Load += new System.EventHandler(this.cadDevolucao_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoBindingNavigator)).EndInit();
             this.itemLocacaoBindingNavigator.ResumeLayout(false);
@@ -404,10 +452,6 @@
         private BDECursosDataSetTableAdapters.ItemLocacaoTableAdapter itemLocacaoTableAdapter;
         private BDECursosDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView itemLocacaoDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -421,8 +465,16 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton itemLocacaoBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingNavigator itemLocacaoBindingNavigator;
-        private System.Windows.Forms.Button btDevolvr;
+        private System.Windows.Forms.Button btDevolver;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private BDECursosDataSetTableAdapters.ClienteTableAdapter clienteTableAdapter;
+        private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.BindingSource cursoBindingSource;
+        private BDECursosDataSetTableAdapters.CursoTableAdapter cursoTableAdapter;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Devolver;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

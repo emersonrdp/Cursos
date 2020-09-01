@@ -18,3 +18,4 @@ E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadPerfil.resou
 E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\bin\Debug\BD-ECursos.accdb
 E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadLocacao.resources
 E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.cadDevolucao.resources
+E:\Projetos\C# Hugo Cursos\Cursos\Cursos\Cursos\obj\Debug\Cursos.ConsultaCliente.resources

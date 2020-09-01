@@ -63,7 +63,11 @@
             this.btCadastrar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.itemLocacaoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.locacaoItemLocacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemLocacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -77,10 +81,6 @@
             this.itemLocacaoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ItemLocacaoTableAdapter();
             this.clienteTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ClienteTableAdapter();
             this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idLocacaoLabel = new System.Windows.Forms.Label();
             idClienteLabel = new System.Windows.Forms.Label();
             idFuncionarioLabel = new System.Windows.Forms.Label();
@@ -390,7 +390,7 @@
             // btCadastrar
             // 
             this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(500, 110);
+            this.btCadastrar.Location = new System.Drawing.Point(500, 67);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(106, 35);
             this.btCadastrar.TabIndex = 4;
@@ -401,7 +401,7 @@
             // btCancelar
             // 
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(500, 68);
+            this.btCancelar.Location = new System.Drawing.Point(500, 109);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(106, 35);
             this.btCancelar.TabIndex = 3;
@@ -424,10 +424,43 @@
             this.itemLocacaoDataGridView.Size = new System.Drawing.Size(610, 241);
             this.itemLocacaoDataGridView.TabIndex = 15;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idItem";
+            this.dataGridViewTextBoxColumn1.HeaderText = "idItem";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "idLocacao";
+            this.dataGridViewTextBoxColumn2.HeaderText = "idLocacao";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "idCurso";
+            this.dataGridViewTextBoxColumn3.DataSource = this.cursoBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "Titulo";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Curso";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "idCurso";
+            this.dataGridViewTextBoxColumn3.Width = 565;
+            // 
             // cursoBindingSource
             // 
             this.cursoBindingSource.DataMember = "Curso";
             this.cursoBindingSource.DataSource = this.bDECursosDataSet;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataDevolucao";
+            this.dataGridViewTextBoxColumn4.HeaderText = "DataDevolucao";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // locacaoItemLocacaoBindingSource
             // 
@@ -484,7 +517,7 @@
             // btNovo
             // 
             this.btNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNovo.Location = new System.Drawing.Point(500, 26);
+            this.btNovo.Location = new System.Drawing.Point(500, 25);
             this.btNovo.Name = "btNovo";
             this.btNovo.Size = new System.Drawing.Size(106, 35);
             this.btNovo.TabIndex = 21;
@@ -520,39 +553,6 @@
             // 
             this.cursoTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idItem";
-            this.dataGridViewTextBoxColumn1.HeaderText = "idItem";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "idLocacao";
-            this.dataGridViewTextBoxColumn2.HeaderText = "idLocacao";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "idCurso";
-            this.dataGridViewTextBoxColumn3.DataSource = this.cursoBindingSource;
-            this.dataGridViewTextBoxColumn3.DisplayMember = "Titulo";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Curso";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn3.ValueMember = "idCurso";
-            this.dataGridViewTextBoxColumn3.Width = 565;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataDevolucao";
-            this.dataGridViewTextBoxColumn4.HeaderText = "DataDevolucao";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
             // cadLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -569,6 +569,7 @@
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "cadLocacao";

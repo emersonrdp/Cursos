@@ -12,6 +12,8 @@ namespace Cursos
 {
     public partial class cadLocacao : Form
     {
+        bool flagSalvar = false;
+
         public cadLocacao()
         {
             InitializeComponent();
@@ -33,44 +35,21 @@ namespace Cursos
                     this.Validate();
                     this.locacaoBindingSource.EndEdit();
                     this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-                    MessageBox.Show("Locação realizada com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Locação salva com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    flagSalvar = true;
                 }
                 else
                 {
                     MessageBox.Show("Informe o curso que será locado antes de finalizar a locação.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    flagSalvar = false;
                 }
             }
             else
             {
                 MessageBox.Show("Informe o cliente antes de finalizar a locação.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                flagSalvar = false;
             }
         }
-
-        private bool SaveLocacaoNovo()   // Salva locação para gerar uma nova (botão Novo)
-        {
-            if ((idClienteTextBox.Text != "") && (comboBoxNomeCliente.Text != ""))
-            {
-                if (itemLocacaoDataGridView.RowCount > 1)
-                {
-                    this.Validate();
-                    this.locacaoBindingSource.EndEdit();
-                    this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-                    return true;
-                    // MessageBox.Show("Locação realizada com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Informe o curso que será locado antes de finalizar a locação.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Informe o cliente antes de finalizar a locação.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-        }
-        
 
         private void cadLocacao_Load(object sender, EventArgs e)
         {
@@ -259,14 +238,15 @@ namespace Cursos
         // Implementar Botão novo
         private void btNovo_Click(object sender, EventArgs e)
         {
-
             // Salva os dados antes de gerar novo, mesmo que o cliente aborte. Implementado dessa forma para que não ocorra erro referente a dados do grid não salvos.
-            if (SaveLocacaoNovo())
+            locacaoBindingNavigatorSaveItem_Click(sender, e);
+            if (flagSalvar)   // a flagSalvar só será true se o formulario for salvo.
             {
                 if (MessageBox.Show("Deseja realmente gerar uma nova Locação?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cadLocacao_Load(sender, e);
                     AlteraData();
+                    flagSalvar = false;
                 }
                 else
                 {
@@ -279,6 +259,10 @@ namespace Cursos
                     this.locacaoBindingSource.MoveLast();
                     MessageBox.Show("Operação abortada.", "Abortada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+           }
+            else
+            {
+                MessageBox.Show("Salve a locação antes de gerar uma nova.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         // -------------------------------------------------------------------------------- //
