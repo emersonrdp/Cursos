@@ -43,20 +43,14 @@ namespace Cursos
             System.Diagnostics.Process.Start("winword");   // abre o MS Word -- depois implmentar para s não achar o winword abrir o wordpad
         }
 
-        // BOTÃO SAIR
-        private void toolStripButton5_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        // MENU SAIR
+        // MENU SAIR 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        // MENU CADASTROS
-       
+        // MENU CADASTROS  ------------------------------------------------------------------------------------------ //
+
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)   // Clientes
         {
             cadCliente frmCliente = new cadCliente(TipoTab.Cadastro);
@@ -87,7 +81,7 @@ namespace Cursos
             frmCurso.Show();
         }
 
-        // MENU CONSULTAS
+        // MENU CONSULTAS  ------------------------------------------------------------------------------------------ //
         private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             cadCliente frmCliente2 = new cadCliente(TipoTab.Consulta);
@@ -113,8 +107,23 @@ namespace Cursos
             frmPerfil2.Show();
         }
 
-        // BOTÕES DO TOPO DA TELA   
-        
+        // MENU MANUTENÇÃO  --------------------------------------------------------------------------------------- //
+
+        private void locaçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadLocacao frmLocacao = new cadLocacao();
+            frmLocacao.Show();
+        }
+
+        private void devoluçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cadDevolucao frmDevolucao = new cadDevolucao();
+            frmDevolucao.Show();
+        }
+
+
+        // BOTÕES DO TOPO DA TELA  ------------------------------------------------------------------------------- // 
+
         // Backup do banco de dados
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -170,8 +179,16 @@ namespace Cursos
         // DEVOLUÇÃO
         private void toolStripButton8_Click(object sender, EventArgs e)
         {
-
+            cadDevolucao frmDevolucao = new cadDevolucao();
+            frmDevolucao.Show();
         }
+
+        // BOTÃO SAIR
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 } 
 

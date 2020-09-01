@@ -66,6 +66,12 @@
     <Compile Include="cadCurso.Designer.cs">
       <DependentUpon>cadCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="cadDevolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadDevolucao.Designer.cs">
+      <DependentUpon>cadDevolucao.cs</DependentUpon>
+    </Compile>
     <Compile Include="cadFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cadCurso.resx">
       <DependentUpon>cadCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadDevolucao.resx">
+      <DependentUpon>cadDevolucao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cadFuncionario.resx">
       <DependentUpon>cadFuncionario.cs</DependentUpon>

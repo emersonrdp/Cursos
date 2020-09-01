@@ -47,9 +47,6 @@
             this.horaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dataSaidaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dataDevolucaoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.locacaoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.LocacaoTableAdapter();
-            this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
-            this.itemLocacaoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ItemLocacaoTableAdapter();
             this.locacaoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -65,20 +62,25 @@
             this.locacaoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.btCadastrar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.itemLocacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemLocacaoDataGridView = new System.Windows.Forms.DataGridView();
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.locacaoItemLocacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemLocacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxCodCurso = new System.Windows.Forms.TextBox();
             this.buttonExcluirCurso = new System.Windows.Forms.Button();
             this.buttonAddCurso = new System.Windows.Forms.Button();
-            this.clienteTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ClienteTableAdapter();
             this.clienteLocacaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btNovo = new System.Windows.Forms.Button();
+            this.locacaoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.LocacaoTableAdapter();
+            this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
+            this.itemLocacaoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ItemLocacaoTableAdapter();
+            this.clienteTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ClienteTableAdapter();
             this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             idLocacaoLabel = new System.Windows.Forms.Label();
             idClienteLabel = new System.Windows.Forms.Label();
             idFuncionarioLabel = new System.Windows.Forms.Label();
@@ -91,9 +93,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.locacaoBindingNavigator)).BeginInit();
             this.locacaoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locacaoItemLocacaoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteLocacaoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +106,7 @@
             idLocacaoLabel.Location = new System.Drawing.Point(19, 20);
             idLocacaoLabel.Name = "idLocacaoLabel";
             idLocacaoLabel.Size = new System.Drawing.Size(43, 13);
-            idLocacaoLabel.TabIndex = 0;
+            idLocacaoLabel.TabIndex = 10;
             idLocacaoLabel.Text = "Código:";
             // 
             // idClienteLabel
@@ -112,7 +115,7 @@
             idClienteLabel.Location = new System.Drawing.Point(19, 93);
             idClienteLabel.Name = "idClienteLabel";
             idClienteLabel.Size = new System.Drawing.Size(42, 13);
-            idClienteLabel.TabIndex = 2;
+            idClienteLabel.TabIndex = 24;
             idClienteLabel.Text = "Cliente:";
             // 
             // idFuncionarioLabel
@@ -121,7 +124,7 @@
             idFuncionarioLabel.Location = new System.Drawing.Point(148, 20);
             idFuncionarioLabel.Name = "idFuncionarioLabel";
             idFuncionarioLabel.Size = new System.Drawing.Size(76, 13);
-            idFuncionarioLabel.TabIndex = 4;
+            idFuncionarioLabel.TabIndex = 24;
             idFuncionarioLabel.Text = "id Funcionario:";
             idFuncionarioLabel.Visible = false;
             // 
@@ -131,7 +134,7 @@
             horaLabel.Location = new System.Drawing.Point(187, 46);
             horaLabel.Name = "horaLabel";
             horaLabel.Size = new System.Drawing.Size(33, 13);
-            horaLabel.TabIndex = 6;
+            horaLabel.TabIndex = 22;
             horaLabel.Text = "Hora:";
             // 
             // dataSaidaLabel
@@ -140,7 +143,7 @@
             dataSaidaLabel.Location = new System.Drawing.Point(19, 46);
             dataSaidaLabel.Name = "dataSaidaLabel";
             dataSaidaLabel.Size = new System.Drawing.Size(93, 13);
-            dataSaidaLabel.TabIndex = 8;
+            dataSaidaLabel.TabIndex = 21;
             dataSaidaLabel.Text = "Data da Locação:";
             // 
             // dataEntregaLabel
@@ -149,7 +152,7 @@
             dataEntregaLabel.Location = new System.Drawing.Point(298, 46);
             dataEntregaLabel.Name = "dataEntregaLabel";
             dataEntregaLabel.Size = new System.Drawing.Size(103, 13);
-            dataEntregaLabel.TabIndex = 10;
+            dataEntregaLabel.TabIndex = 23;
             dataEntregaLabel.Text = "Data da Devolução:";
             // 
             // groupBox1
@@ -183,7 +186,7 @@
             this.comboBoxNomeCliente.Location = new System.Drawing.Point(97, 109);
             this.comboBoxNomeCliente.Name = "comboBoxNomeCliente";
             this.comboBoxNomeCliente.Size = new System.Drawing.Size(333, 21);
-            this.comboBoxNomeCliente.TabIndex = 12;
+            this.comboBoxNomeCliente.TabIndex = 28;
             this.comboBoxNomeCliente.ValueMember = "idCliente";
             this.comboBoxNomeCliente.SelectionChangeCommitted += new System.EventHandler(this.comboBoxNomeCliente_SelectionChangeCommitted);
             // 
@@ -209,7 +212,7 @@
             this.idLocacaoTextBox.Name = "idLocacaoTextBox";
             this.idLocacaoTextBox.ReadOnly = true;
             this.idLocacaoTextBox.Size = new System.Drawing.Size(73, 20);
-            this.idLocacaoTextBox.TabIndex = 1;
+            this.idLocacaoTextBox.TabIndex = 11;
             // 
             // idClienteTextBox
             // 
@@ -217,7 +220,7 @@
             this.idClienteTextBox.Location = new System.Drawing.Point(22, 109);
             this.idClienteTextBox.Name = "idClienteTextBox";
             this.idClienteTextBox.Size = new System.Drawing.Size(69, 20);
-            this.idClienteTextBox.TabIndex = 3;
+            this.idClienteTextBox.TabIndex = 1;
             this.idClienteTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idClienteTextBox_KeyPress);
             // 
             // idFuncionarioTextBox
@@ -226,7 +229,7 @@
             this.idFuncionarioTextBox.Location = new System.Drawing.Point(230, 17);
             this.idFuncionarioTextBox.Name = "idFuncionarioTextBox";
             this.idFuncionarioTextBox.Size = new System.Drawing.Size(200, 20);
-            this.idFuncionarioTextBox.TabIndex = 5;
+            this.idFuncionarioTextBox.TabIndex = 25;
             this.idFuncionarioTextBox.Visible = false;
             // 
             // horaDateTimePicker
@@ -237,7 +240,7 @@
             this.horaDateTimePicker.Name = "horaDateTimePicker";
             this.horaDateTimePicker.ShowUpDown = true;
             this.horaDateTimePicker.Size = new System.Drawing.Size(78, 20);
-            this.horaDateTimePicker.TabIndex = 7;
+            this.horaDateTimePicker.TabIndex = 13;
             // 
             // dataSaidaDateTimePicker
             // 
@@ -246,7 +249,7 @@
             this.dataSaidaDateTimePicker.Location = new System.Drawing.Point(22, 62);
             this.dataSaidaDateTimePicker.Name = "dataSaidaDateTimePicker";
             this.dataSaidaDateTimePicker.Size = new System.Drawing.Size(129, 20);
-            this.dataSaidaDateTimePicker.TabIndex = 9;
+            this.dataSaidaDateTimePicker.TabIndex = 12;
             // 
             // dataDevolucaoDateTimePicker
             // 
@@ -255,27 +258,7 @@
             this.dataDevolucaoDateTimePicker.Location = new System.Drawing.Point(301, 62);
             this.dataDevolucaoDateTimePicker.Name = "dataDevolucaoDateTimePicker";
             this.dataDevolucaoDateTimePicker.Size = new System.Drawing.Size(129, 20);
-            this.dataDevolucaoDateTimePicker.TabIndex = 11;
-            // 
-            // locacaoTableAdapter
-            // 
-            this.locacaoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ClienteTableAdapter = null;
-            this.tableAdapterManager.CursoTableAdapter = null;
-            this.tableAdapterManager.FuncionarioTableAdapter = null;
-            this.tableAdapterManager.ItemLocacaoTableAdapter = this.itemLocacaoTableAdapter;
-            this.tableAdapterManager.LocacaoTableAdapter = this.locacaoTableAdapter;
-            this.tableAdapterManager.PerfilTableAdapter = null;
-            this.tableAdapterManager.ProfessorTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // itemLocacaoTableAdapter
-            // 
-            this.itemLocacaoTableAdapter.ClearBeforeFill = true;
+            this.dataDevolucaoDateTimePicker.TabIndex = 14;
             // 
             // locacaoBindingNavigator
             // 
@@ -303,7 +286,7 @@
             this.locacaoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.locacaoBindingNavigator.Name = "locacaoBindingNavigator";
             this.locacaoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.locacaoBindingNavigator.Size = new System.Drawing.Size(808, 25);
+            this.locacaoBindingNavigator.Size = new System.Drawing.Size(634, 25);
             this.locacaoBindingNavigator.TabIndex = 1;
             this.locacaoBindingNavigator.Text = "bindingNavigator1";
             this.locacaoBindingNavigator.Visible = false;
@@ -407,10 +390,10 @@
             // btCadastrar
             // 
             this.btCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCadastrar.Location = new System.Drawing.Point(500, 89);
+            this.btCadastrar.Location = new System.Drawing.Point(500, 110);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(106, 35);
-            this.btCadastrar.TabIndex = 15;
+            this.btCadastrar.TabIndex = 4;
             this.btCadastrar.Text = "Salvar";
             this.btCadastrar.UseVisualStyleBackColor = true;
             this.btCadastrar.Click += new System.EventHandler(this.locacaoBindingNavigatorSaveItem_Click);
@@ -418,18 +401,13 @@
             // btCancelar
             // 
             this.btCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCancelar.Location = new System.Drawing.Point(500, 36);
+            this.btCancelar.Location = new System.Drawing.Point(500, 68);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(106, 35);
-            this.btCancelar.TabIndex = 14;
+            this.btCancelar.TabIndex = 3;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // itemLocacaoBindingSource
-            // 
-            this.itemLocacaoBindingSource.DataMember = "ItemLocacao";
-            this.itemLocacaoBindingSource.DataSource = this.bDECursosDataSet;
             // 
             // itemLocacaoDataGridView
             // 
@@ -440,10 +418,10 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.itemLocacaoDataGridView.DataSource = this.itemLocacaoBindingSource;
-            this.itemLocacaoDataGridView.Location = new System.Drawing.Point(34, 206);
+            this.itemLocacaoDataGridView.DataSource = this.locacaoItemLocacaoBindingSource;
+            this.itemLocacaoDataGridView.Location = new System.Drawing.Point(12, 205);
             this.itemLocacaoDataGridView.Name = "itemLocacaoDataGridView";
-            this.itemLocacaoDataGridView.Size = new System.Drawing.Size(572, 241);
+            this.itemLocacaoDataGridView.Size = new System.Drawing.Size(610, 241);
             this.itemLocacaoDataGridView.TabIndex = 15;
             // 
             // cursoBindingSource
@@ -451,27 +429,37 @@
             this.cursoBindingSource.DataMember = "Curso";
             this.cursoBindingSource.DataSource = this.bDECursosDataSet;
             // 
+            // locacaoItemLocacaoBindingSource
+            // 
+            this.locacaoItemLocacaoBindingSource.DataMember = "LocacaoItemLocacao";
+            this.locacaoItemLocacaoBindingSource.DataSource = this.locacaoBindingSource;
+            // 
+            // itemLocacaoBindingSource
+            // 
+            this.itemLocacaoBindingSource.DataMember = "ItemLocacao";
+            this.itemLocacaoBindingSource.DataSource = this.bDECursosDataSet;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 158);
+            this.label1.Location = new System.Drawing.Point(9, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 16;
+            this.label1.TabIndex = 29;
             this.label1.Text = "Código do Curso:";
             // 
             // textBoxCodCurso
             // 
-            this.textBoxCodCurso.Location = new System.Drawing.Point(34, 175);
+            this.textBoxCodCurso.Location = new System.Drawing.Point(12, 177);
             this.textBoxCodCurso.Name = "textBoxCodCurso";
-            this.textBoxCodCurso.Size = new System.Drawing.Size(117, 20);
-            this.textBoxCodCurso.TabIndex = 17;
+            this.textBoxCodCurso.Size = new System.Drawing.Size(69, 20);
+            this.textBoxCodCurso.TabIndex = 2;
             this.textBoxCodCurso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCodCurso_KeyPress);
             // 
             // buttonExcluirCurso
             // 
             this.buttonExcluirCurso.Image = ((System.Drawing.Image)(resources.GetObject("buttonExcluirCurso.Image")));
-            this.buttonExcluirCurso.Location = new System.Drawing.Point(201, 175);
+            this.buttonExcluirCurso.Location = new System.Drawing.Point(131, 176);
             this.buttonExcluirCurso.Name = "buttonExcluirCurso";
             this.buttonExcluirCurso.Size = new System.Drawing.Size(38, 21);
             this.buttonExcluirCurso.TabIndex = 19;
@@ -481,51 +469,56 @@
             // buttonAddCurso
             // 
             this.buttonAddCurso.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddCurso.Image")));
-            this.buttonAddCurso.Location = new System.Drawing.Point(157, 175);
+            this.buttonAddCurso.Location = new System.Drawing.Point(87, 176);
             this.buttonAddCurso.Name = "buttonAddCurso";
             this.buttonAddCurso.Size = new System.Drawing.Size(38, 21);
             this.buttonAddCurso.TabIndex = 18;
             this.buttonAddCurso.UseVisualStyleBackColor = true;
             this.buttonAddCurso.Click += new System.EventHandler(this.buttonAddCurso_Click);
             // 
-            // clienteTableAdapter
-            // 
-            this.clienteTableAdapter.ClearBeforeFill = true;
-            // 
             // clienteLocacaoBindingSource
             // 
             this.clienteLocacaoBindingSource.DataMember = "ClienteLocacao";
             this.clienteLocacaoBindingSource.DataSource = this.clienteBindingSource;
             // 
+            // btNovo
+            // 
+            this.btNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNovo.Location = new System.Drawing.Point(500, 26);
+            this.btNovo.Name = "btNovo";
+            this.btNovo.Size = new System.Drawing.Size(106, 35);
+            this.btNovo.TabIndex = 21;
+            this.btNovo.Text = "Novo";
+            this.btNovo.UseVisualStyleBackColor = true;
+            this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
+            // 
+            // locacaoTableAdapter
+            // 
+            this.locacaoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClienteTableAdapter = null;
+            this.tableAdapterManager.CursoTableAdapter = null;
+            this.tableAdapterManager.FuncionarioTableAdapter = null;
+            this.tableAdapterManager.ItemLocacaoTableAdapter = this.itemLocacaoTableAdapter;
+            this.tableAdapterManager.LocacaoTableAdapter = this.locacaoTableAdapter;
+            this.tableAdapterManager.PerfilTableAdapter = null;
+            this.tableAdapterManager.ProfessorTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // itemLocacaoTableAdapter
+            // 
+            this.itemLocacaoTableAdapter.ClearBeforeFill = true;
+            // 
+            // clienteTableAdapter
+            // 
+            this.clienteTableAdapter.ClearBeforeFill = true;
+            // 
             // cursoTableAdapter
             // 
             this.cursoTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataDevolucao";
-            this.dataGridViewTextBoxColumn4.HeaderText = "DataDevolucao";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "idCurso";
-            this.dataGridViewTextBoxColumn3.DataSource = this.cursoBindingSource;
-            this.dataGridViewTextBoxColumn3.DisplayMember = "Titulo";
-            this.dataGridViewTextBoxColumn3.HeaderText = "idCurso";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn3.ValueMember = "idCurso";
-            this.dataGridViewTextBoxColumn3.Width = 529;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "idLocacao";
-            this.dataGridViewTextBoxColumn2.HeaderText = "idLocacao";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -534,11 +527,38 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Visible = false;
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "idLocacao";
+            this.dataGridViewTextBoxColumn2.HeaderText = "idLocacao";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "idCurso";
+            this.dataGridViewTextBoxColumn3.DataSource = this.cursoBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "Titulo";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Curso";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "idCurso";
+            this.dataGridViewTextBoxColumn3.Width = 565;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataDevolucao";
+            this.dataGridViewTextBoxColumn4.HeaderText = "DataDevolucao";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
             // cadLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 458);
+            this.Controls.Add(this.btNovo);
             this.Controls.Add(this.buttonExcluirCurso);
             this.Controls.Add(this.buttonAddCurso);
             this.Controls.Add(this.textBoxCodCurso);
@@ -563,9 +583,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.locacaoBindingNavigator)).EndInit();
             this.locacaoBindingNavigator.ResumeLayout(false);
             this.locacaoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.locacaoItemLocacaoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteLocacaoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -613,6 +634,8 @@
         private System.Windows.Forms.BindingSource clienteLocacaoBindingSource;
         private System.Windows.Forms.BindingSource cursoBindingSource;
         private BDECursosDataSetTableAdapters.CursoTableAdapter cursoTableAdapter;
+        private System.Windows.Forms.Button btNovo;
+        private System.Windows.Forms.BindingSource locacaoItemLocacaoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;

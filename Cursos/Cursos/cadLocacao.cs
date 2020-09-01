@@ -46,6 +46,32 @@ namespace Cursos
             }
         }
 
+        private bool SaveLocacaoNovo()   // Salva locação para gerar uma nova (botão Novo)
+        {
+            if ((idClienteTextBox.Text != "") && (comboBoxNomeCliente.Text != ""))
+            {
+                if (itemLocacaoDataGridView.RowCount > 1)
+                {
+                    this.Validate();
+                    this.locacaoBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
+                    return true;
+                    // MessageBox.Show("Locação realizada com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Informe o curso que será locado antes de finalizar a locação.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Informe o cliente antes de finalizar a locação.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+        }
+        
+
         private void cadLocacao_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'bDECursosDataSet.Curso'. Você pode movê-la ou removê-la conforme necessário.
@@ -65,18 +91,25 @@ namespace Cursos
             // TODO: esta linha de código carrega dados na tabela 'bDECursosDataSet.Locacao'. Você pode movê-la ou removê-la conforme necessário.
             this.locacaoTableAdapter.Fill(this.bDECursosDataSet.Locacao);
 
-            this.locacaoBindingSource.MoveLast();
+            this.locacaoBindingSource.MoveLast();   // Mover para o ultimo registro após carregar o formulário
         }
+
+        // -------------------------------------------------------------------------------- //
 
         private void buttonExcluirCurso_Click(object sender, EventArgs e)   //Botão Remover Curso 
         {
-            this.itemLocacaoBindingSource.RemoveCurrent();
+            try
+            {
+                this.locacaoItemLocacaoBindingSource.RemoveCurrent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message);
+            }
         }
 
         private void buttonAddCurso_Click(object sender, EventArgs e)   //Botão Adicionar Curso
         {
-            //textBoxCodCurso_KeyPress(sender, (KeyPressEventArgs)e);
-
             int idx;
             bool flag = false;
 
@@ -129,36 +162,49 @@ namespace Cursos
             }
         }
 
-
+        // -------------------------------------------------------------------------------- //
 
         private void btCancelar_Click(object sender, EventArgs e)   //Botão Cancelar
         {
             this.Dispose();
         }
 
+        // Essa rotina não esta em uso porque o navigator está invisível
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             AlteraData();
         }
 
+        // -------------------------------------------------------------------------------- //
+
         private void idClienteTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
+            try
             {
-                comboBoxNomeCliente.SelectedValue = idClienteTextBox.Text;
-
-                if (comboBoxNomeCliente.Text == "")
+                if (e.KeyChar == 13)
                 {
-                    MessageBox.Show("Cliente não cadastrado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    idClienteTextBox.Clear();
+                    comboBoxNomeCliente.SelectedValue = idClienteTextBox.Text;
+
+                    if (comboBoxNomeCliente.Text == "")
+                    {
+                        MessageBox.Show("Cliente não cadastrado!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        idClienteTextBox.Clear();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message);
             }
         }
 
+        // Alimentação do Combobox com nome do ciente
         private void comboBoxNomeCliente_SelectionChangeCommitted(object sender, EventArgs e)
         {
             idClienteTextBox.Text = comboBoxNomeCliente.SelectedValue.ToString();
         }
+
+        // -------------------------------------------------------------------------------- //
 
         private void textBoxCodCurso_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -195,19 +241,46 @@ namespace Cursos
                             // Inclui o curso na cesta
                             this.bDECursosDataSet.ItemLocacao.Rows.Add(null, Convert.ToInt32(idLocacaoTextBox.Text), Convert.ToInt32(textBoxCodCurso.Text), null);
                         }
-                        
+                        textBoxCodCurso.Clear();
                     }
                     else
                     {
                         MessageBox.Show("O Curso não foi encontrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textBoxCodCurso.Clear();
                     }
                 }
-                textBoxCodCurso.Clear();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu um erro: " + ex.Message);
             }
         }
+
+        // Implementar Botão novo
+        private void btNovo_Click(object sender, EventArgs e)
+        {
+
+            // Salva os dados antes de gerar novo, mesmo que o cliente aborte. Implementado dessa forma para que não ocorra erro referente a dados do grid não salvos.
+            if (SaveLocacaoNovo())
+            {
+                if (MessageBox.Show("Deseja realmente gerar uma nova Locação?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cadLocacao_Load(sender, e);
+                    AlteraData();
+                }
+                else
+                {
+                    // Recarrega o formulario
+                    this.clienteTableAdapter.Fill(this.bDECursosDataSet.Cliente);
+                    this.itemLocacaoTableAdapter.Fill(this.bDECursosDataSet.ItemLocacao);
+                    this.locacaoTableAdapter.Fill(this.bDECursosDataSet.Locacao);
+                    this.cursoTableAdapter.Fill(this.bDECursosDataSet.Curso);
+                    // Mover para o ultimo registro após carregar o formulário
+                    this.locacaoBindingSource.MoveLast();
+                    MessageBox.Show("Operação abortada.", "Abortada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        // -------------------------------------------------------------------------------- //
     }
 }
