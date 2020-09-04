@@ -81,6 +81,7 @@
             this.itemLocacaoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ItemLocacaoTableAdapter();
             this.clienteTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ClienteTableAdapter();
             this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
+            this.toolTipInfoLocacao = new System.Windows.Forms.ToolTip(this.components);
             idLocacaoLabel = new System.Windows.Forms.Label();
             idClienteLabel = new System.Windows.Forms.Label();
             idFuncionarioLabel = new System.Windows.Forms.Label();
@@ -395,6 +396,7 @@
             this.btCadastrar.Size = new System.Drawing.Size(106, 35);
             this.btCadastrar.TabIndex = 4;
             this.btCadastrar.Text = "Salvar";
+            this.toolTipInfoLocacao.SetToolTip(this.btCadastrar, "Salva a locação.");
             this.btCadastrar.UseVisualStyleBackColor = true;
             this.btCadastrar.Click += new System.EventHandler(this.locacaoBindingNavigatorSaveItem_Click);
             // 
@@ -406,6 +408,7 @@
             this.btCancelar.Size = new System.Drawing.Size(106, 35);
             this.btCancelar.TabIndex = 3;
             this.btCancelar.Text = "Cancelar";
+            this.toolTipInfoLocacao.SetToolTip(this.btCancelar, "Fecha a tela de locacção.");
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
@@ -496,6 +499,7 @@
             this.buttonExcluirCurso.Name = "buttonExcluirCurso";
             this.buttonExcluirCurso.Size = new System.Drawing.Size(38, 21);
             this.buttonExcluirCurso.TabIndex = 19;
+            this.toolTipInfoLocacao.SetToolTip(this.buttonExcluirCurso, "Exclui o curso selecionado.");
             this.buttonExcluirCurso.UseVisualStyleBackColor = true;
             this.buttonExcluirCurso.Click += new System.EventHandler(this.buttonExcluirCurso_Click);
             // 
@@ -506,6 +510,7 @@
             this.buttonAddCurso.Name = "buttonAddCurso";
             this.buttonAddCurso.Size = new System.Drawing.Size(38, 21);
             this.buttonAddCurso.TabIndex = 18;
+            this.toolTipInfoLocacao.SetToolTip(this.buttonAddCurso, "Adiciona o curso referente ao código informado na cesta.");
             this.buttonAddCurso.UseVisualStyleBackColor = true;
             this.buttonAddCurso.Click += new System.EventHandler(this.buttonAddCurso_Click);
             // 
@@ -522,6 +527,7 @@
             this.btNovo.Size = new System.Drawing.Size(106, 35);
             this.btNovo.TabIndex = 21;
             this.btNovo.Text = "Novo";
+            this.toolTipInfoLocacao.SetToolTip(this.btNovo, "Salva a locação e cria uma nova.");
             this.btNovo.UseVisualStyleBackColor = true;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
@@ -552,6 +558,10 @@
             // cursoTableAdapter
             // 
             this.cursoTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolTipInfoLocacao
+            // 
+            this.toolTipInfoLocacao.Tag = "";
             // 
             // cadLocacao
             // 
@@ -641,5 +651,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.ToolTip toolTipInfoLocacao;
     }
 }

@@ -67,6 +67,7 @@
             this.clienteTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ClienteTableAdapter();
             this.btCancelar = new System.Windows.Forms.Button();
             this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
+            this.toolTipDevolucao = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemLocacaoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
@@ -101,6 +102,7 @@
             this.bt_PesquisaCliente.Name = "bt_PesquisaCliente";
             this.bt_PesquisaCliente.Size = new System.Drawing.Size(31, 21);
             this.bt_PesquisaCliente.TabIndex = 6;
+            this.toolTipDevolucao.SetToolTip(this.bt_PesquisaCliente, "Abre tela de pesquisa de cliente.");
             this.bt_PesquisaCliente.UseVisualStyleBackColor = true;
             this.bt_PesquisaCliente.Click += new System.EventHandler(this.bt_PesquisaCliente_Click);
             // 
@@ -360,6 +362,7 @@
             this.btDevolver.Size = new System.Drawing.Size(105, 35);
             this.btDevolver.TabIndex = 5;
             this.btDevolver.Text = "Devolver";
+            this.toolTipDevolucao.SetToolTip(this.btDevolver, "Faz a devolução dos cursos selecionados.");
             this.btDevolver.UseVisualStyleBackColor = true;
             this.btDevolver.Click += new System.EventHandler(this.btDevolver_Click);
             // 
@@ -397,6 +400,7 @@
             this.btCancelar.Size = new System.Drawing.Size(106, 35);
             this.btCancelar.TabIndex = 6;
             this.btCancelar.Text = "Cancelar";
+            this.toolTipDevolucao.SetToolTip(this.btCancelar, "Fecha a tela de devolução.");
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
@@ -476,5 +480,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.ToolTip toolTipDevolucao;
     }
 }
