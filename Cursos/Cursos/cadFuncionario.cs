@@ -30,15 +30,16 @@ namespace Cursos
         {
             try
             {
+                this.idFuncionarioTextBox.Text = "-1";   // Devolver o valor "-1" para o campo, para que não de erro ao salvar o registro no banco de dados
                 if (senhaTextBox.Text == confirmeSenhaTextBox.Text)
                 {
                     this.Validate();
                     this.funcionarioBindingSource.EndEdit();
                     this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-                    MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.funcionarioTableAdapter.Fill(this.bDECursosDataSet.Funcionario);   // Recarrega o formulario
                     confirmeSenhaTextBox.Text = "";   // Limpar o campode confirmação da senha
                     this.funcionarioBindingSource.MoveLast();   // mover para o ultimo cadastro
+                    MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -92,6 +93,11 @@ namespace Cursos
         private void textBoxPesquisaFuncionario_TextChanged(object sender, EventArgs e)
         {
             this.funcionarioTableAdapter.FillByPesquisaFuncionario(bDECursosDataSet.Funcionario, textBoxPesquisaFuncionario.Text);
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            this.idFuncionarioTextBox.Text = "";
         }
     }
 }

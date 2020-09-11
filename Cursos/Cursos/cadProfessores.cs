@@ -35,12 +35,13 @@ namespace Cursos
         {
             try
             {
+                this.idProfessorTextBox.Text = "-1";   // Devolver o valor "-1" para o campo, para que não de erro ao salvar o registro no banco de dados
                 this.Validate();
                 this.professorBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.bDECursosDataSet);
-                MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.professorTableAdapter.Fill(this.bDECursosDataSet.Professor);   // Recarrega o formulario
                 this.professorBindingSource.MoveLast();   // mover para o ultimo cadastro
+                MessageBox.Show("Registro salvo com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -77,6 +78,11 @@ namespace Cursos
         private void textBoxPesquisaProfessor_TextChanged(object sender, EventArgs e)
         {
             this.professorTableAdapter.FillByPesquisaProfessor(bDECursosDataSet.Professor, textBoxPesquisaProfessor.Text);
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            this.idProfessorTextBox.Text = "";
         }
     }
 }

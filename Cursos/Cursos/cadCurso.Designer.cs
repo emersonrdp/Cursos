@@ -37,10 +37,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cadCurso));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.cursoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.comboBoxIdProfessor = new System.Windows.Forms.ComboBox();
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bDECursosDataSet = new Cursos.BDECursosDataSet();
+            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cursoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -81,8 +83,6 @@
             this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
             this.cursoTableAdapter = new Cursos.BDECursosDataSetTableAdapters.CursoTableAdapter();
             this.tableAdapterManager = new Cursos.BDECursosDataSetTableAdapters.TableAdapterManager();
-            this.comboBoxIdProfessor = new System.Windows.Forms.ComboBox();
-            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.professorTableAdapter = new Cursos.BDECursosDataSetTableAdapters.ProfessorTableAdapter();
             descCursoLabel = new System.Windows.Forms.Label();
             tituloLabel = new System.Windows.Forms.Label();
@@ -91,16 +91,16 @@
             label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingNavigator)).BeginInit();
-            this.cursoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingNavigator)).BeginInit();
+            this.cursoBindingNavigator.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.tabPage3ImagemCapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // descCursoLabel
@@ -181,6 +181,33 @@
             this.tabPage1.Text = "Dados Gerais";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // comboBoxIdProfessor
+            // 
+            this.comboBoxIdProfessor.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cursoBindingSource, "idProfessor", true));
+            this.comboBoxIdProfessor.DataSource = this.professorBindingSource;
+            this.comboBoxIdProfessor.DisplayMember = "Nome";
+            this.comboBoxIdProfessor.FormattingEnabled = true;
+            this.comboBoxIdProfessor.Location = new System.Drawing.Point(162, 93);
+            this.comboBoxIdProfessor.Name = "comboBoxIdProfessor";
+            this.comboBoxIdProfessor.Size = new System.Drawing.Size(508, 21);
+            this.comboBoxIdProfessor.TabIndex = 11;
+            this.comboBoxIdProfessor.ValueMember = "idProfessor";
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataMember = "Curso";
+            this.cursoBindingSource.DataSource = this.bDECursosDataSet;
+            // 
+            // bDECursosDataSet
+            // 
+            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
+            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // professorBindingSource
+            // 
+            this.professorBindingSource.DataMember = "Professor";
+            this.professorBindingSource.DataSource = this.bDECursosDataSet;
+            // 
             // cursoBindingNavigator
             // 
             this.cursoBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -219,16 +246,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
-            // 
-            // cursoBindingSource
-            // 
-            this.cursoBindingSource.DataMember = "Curso";
-            this.cursoBindingSource.DataSource = this.bDECursosDataSet;
-            // 
-            // bDECursosDataSet
-            // 
-            this.bDECursosDataSet.DataSetName = "BDECursosDataSet";
-            this.bDECursosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -595,23 +613,6 @@
             this.tableAdapterManager.ProfessorTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Cursos.BDECursosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // comboBoxIdProfessor
-            // 
-            this.comboBoxIdProfessor.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cursoBindingSource, "idProfessor", true));
-            this.comboBoxIdProfessor.DataSource = this.professorBindingSource;
-            this.comboBoxIdProfessor.DisplayMember = "Nome";
-            this.comboBoxIdProfessor.FormattingEnabled = true;
-            this.comboBoxIdProfessor.Location = new System.Drawing.Point(162, 93);
-            this.comboBoxIdProfessor.Name = "comboBoxIdProfessor";
-            this.comboBoxIdProfessor.Size = new System.Drawing.Size(508, 21);
-            this.comboBoxIdProfessor.TabIndex = 11;
-            this.comboBoxIdProfessor.ValueMember = "idProfessor";
-            // 
-            // professorBindingSource
-            // 
-            this.professorBindingSource.DataMember = "Professor";
-            this.professorBindingSource.DataSource = this.bDECursosDataSet;
-            // 
             // professorTableAdapter
             // 
             this.professorTableAdapter.ClearBeforeFill = true;
@@ -633,11 +634,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingNavigator)).EndInit();
             this.cursoBindingNavigator.ResumeLayout(false);
             this.cursoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bDECursosDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
@@ -646,7 +648,6 @@
             this.tabPage3ImagemCapa.ResumeLayout(false);
             this.tabPage3ImagemCapa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
